@@ -13,6 +13,8 @@
 #define kFingersMax 11
 
 @interface FantaStickViewController : UIViewController <UIAlertViewDelegate, UIAccelerometerDelegate> {
+	id glview;
+
 	Transport *transport;		// udp sender/receiver
 	NSTimer *ipTimer;
 	MPVolumeView *volumeEventView;
@@ -31,6 +33,8 @@
 - (void)sendTouches:(NSSet*)touches mode: (int)m;
 
 - (void)hideStartupAnimation;
+
+@property (nonatomic, retain) id glview;
 
 @end
 

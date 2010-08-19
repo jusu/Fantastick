@@ -1,3 +1,17 @@
+
+
+
+todo:
+
+- disable all js until first time js file is loaded
+- texture loading from js code?
+
+
+
+
+
+
+===================
 FIXES for 1.7
 
 - opengl fixed for iPad

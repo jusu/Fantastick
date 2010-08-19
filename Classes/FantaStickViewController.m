@@ -12,6 +12,8 @@
 
 @implementation FantaStickViewController
 
+@synthesize glview;
+
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -175,12 +177,14 @@
 		NSString *str = [[NSString alloc] initWithFormat: @"%c %ld %ld %ld", prefix, lrintf(loc.x), lrintf(loc.y), nID + 1];
 		[transport send: str];
 		[str release];
+		
+		[glview touch: prefix x: lrintf(loc.x) y: lrintf(loc.y) num: nID + 1];
 	}
 
 	NSString *str = [[NSString alloc] initWithFormat: @"X %d", [touches count]];
 	[transport send: str];
 	[str release];
-
+	
 	if(allEnded) {
 		[transport send: @"X 0"];
 		for(int n=0; n<kFingersMax; n++)

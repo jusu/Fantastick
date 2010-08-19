@@ -36,6 +36,11 @@
 	// Hold GLModels
 	NSMutableDictionary* models;
 	NSMutableDictionary* models_clearqueue;
+	
+	// JS
+	UIWebView *web;
+	NSTimer *jsTimer;
+	NSMutableArray *jsCode;
 }
 
 -(void)activate;
@@ -43,7 +48,7 @@
 -(void)stopOpenGLAnimation;
 -(void)drawGLView;
 -(void)handleMessage: (id)msg;
-
+-(void)touch: (char)type x: (int)xpos y: (int)ypos num: (int)finger;
 @property (nonatomic, retain) id controller;
 @property (nonatomic, retain) id TouchView;
 

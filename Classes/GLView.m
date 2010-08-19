@@ -57,6 +57,15 @@ kSquareX,   kSquareY
 		controllerSetup = NO;
 		clearRequested = NO;
 		[self initGLES];
+		
+		web = [[UIWebView alloc] init];
+		[web loadHTMLString: @"<html></html>" baseURL: [NSURL URLWithString: @"file:///"]];
+		NSString *res = [web stringByEvaluatingJavaScriptFromString: @"(function(){ return 42; })();"];
+		res = [web stringByEvaluatingJavaScriptFromString: @"var draw = function(){}"];
+		res = [web stringByEvaluatingJavaScriptFromString: @"var cmdq = []; var draw = function() {};"
+			   "var cmdq_poll = function() { var s; draw(); s = cmdq.join(':'); cmdq = []; return s; };"
+			   "var touch = function(type, x, y, id) {};"];
+		jsCode = [[NSMutableArray alloc] init];
 	}
     return self;
 }
@@ -148,12 +157,25 @@ kSquareX,   kSquareY
 - (void)startOpenGLAnimation
 {
 	animationTimer = [NSTimer scheduledTimerWithTimeInterval:animationInterval target:self selector:@selector(drawView) userInfo:nil repeats:YES];
+	[self performSelectorOnMainThread: @selector(startJSAnimation) withObject: nil waitUntilDone: NO];
 }
 
 - (void)stopOpenGLAnimation
 {
 	[animationTimer invalidate];
 	animationTimer = nil;
+	[self performSelectorOnMainThread: @selector(stopJSAnimation) withObject: nil waitUntilDone: NO];
+}
+
+- (void)startJSAnimation
+{
+	jsTimer = [NSTimer scheduledTimerWithTimeInterval: 1.0f / 25.0f target:self selector:@selector(pollJS) userInfo:nil repeats:YES];
+}
+
+- (void)stopJSAnimation
+{
+	[jsTimer invalidate];
+	jsTimer = nil;
 }
 
 - (void)setAnimationInterval:(NSTimeInterval)interval
@@ -165,6 +187,45 @@ kSquareX,   kSquareY
 		[self stopOpenGLAnimation];
 		[self startOpenGLAnimation];
 	}
+}
+
+- (void) pollJS
+{
+	NSString *js = nil;
+	@synchronized(jsCode) {
+		if([jsCode count]) {
+			js = [[jsCode objectAtIndex: 0] retain];
+			[jsCode removeObjectAtIndex: 0];
+		}
+	}
+
+	if(js) {
+		NSString *res = [web stringByEvaluatingJavaScriptFromString: js];
+		if(res.length) {
+			NSLog(@"js '%@'", res);
+		}
+		[js release];
+	}
+
+	NSString *s = [web stringByEvaluatingJavaScriptFromString: @"cmdq_poll();"];
+	if(s.length > 0) {
+		NSArray *a = [s componentsSeparatedByString: @":"];
+		for(NSString *cmd in a) {
+			[self processCommand: (char*)[cmd cStringUsingEncoding: NSASCIIStringEncoding]];
+		}
+	}
+}
+
+// evaluate js right away (instead of periodic polling)
+- (void) doJS: (NSString*) s
+{
+	[web stringByEvaluatingJavaScriptFromString: s];
+}
+
+-(void)touch: (char) type x: (int) xpos y: (int) ypos num: (int) finger
+{
+	NSString *s = [NSString stringWithFormat: @"touch('%c', %d, %d, %d);", type, xpos, ypos, finger];
+	[self doJS: s];
 }
 
 // Updates the OpenGL view when the timer fires
@@ -350,6 +411,21 @@ char buffer[8192];
 		[self stopOpenGLAnimation];
 		self.hidden = YES;
 		[TouchView activate];
+	} else {
+	if(strncmp(cmd, "js ", 3) == 0) {
+		cmd += 3;
+		NSString *us = [[NSString alloc] initWithCString: cmd];
+		NSURL *u = [[NSURL alloc] initWithString: us];
+		NSString *s = [[NSString alloc] initWithContentsOfURL: u];
+		if(s && s.length) {
+			@synchronized(jsCode) {
+				[jsCode addObject: s];
+			}
+		}
+		[s release];
+		[u release];
+		[us release];
+	}
 	}
 }
 
@@ -371,6 +447,9 @@ char buffer[8192];
 		[models_clearqueue release];
 	}
 
+	[web release];
+	[jsCode release];
+	
     [super dealloc];
 }
 
