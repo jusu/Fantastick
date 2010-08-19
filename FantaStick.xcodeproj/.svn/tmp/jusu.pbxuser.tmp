@@ -1,0 +1,321 @@
+// !$*UTF8*$!
+{
+	1D6058900D05DD3D006BFB54 /* FantaStick */ = {
+		activeExec = 0;
+		executables = (
+			C96E4F4B0FE8DBC2001EFA9C /* FantaStick */,
+		);
+	};
+	28D7ACF70DDB3853001CB0EB /* FantaStickViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {966, 3304}}";
+			sepNavSelRange = "{5671, 0}";
+			sepNavVisRange = "{0, 842}";
+		};
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Release;
+		activeExecutable = C96E4F4B0FE8DBC2001EFA9C /* FantaStick */;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* FantaStick */;
+		codeSenseManager = C96E4F590FE8DBD0001EFA9C /* Code sense */;
+		executables = (
+			C96E4F4B0FE8DBC2001EFA9C /* FantaStick */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+<<<<<<< .mine
+					601,
+=======
+					509,
+>>>>>>> .r1036
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+<<<<<<< .mine
+			PBXPerProjectTemplateStateSaveDate = 274783558;
+			PBXWorkspaceStateSaveDate = 274783558;
+=======
+			PBXPerProjectTemplateStateSaveDate = 277738923;
+			PBXWorkspaceStateSaveDate = 277738923;
+>>>>>>> .r1036
+		};
+		perUserProjectItems = {
+<<<<<<< .mine
+			C9319C381060DD85008EC371 /* PBXTextBookmark */ = C9319C381060DD85008EC371 /* PBXTextBookmark */;
+			C9319C391060DD85008EC371 /* PBXTextBookmark */ = C9319C391060DD85008EC371 /* PBXTextBookmark */;
+			C9319C3A1060DD85008EC371 /* PBXTextBookmark */ = C9319C3A1060DD85008EC371 /* PBXTextBookmark */;
+			C9319C3B1060DD85008EC371 /* PlistBookmark */ = C9319C3B1060DD85008EC371 /* PlistBookmark */;
+			C9319C3C1060DD85008EC371 /* PBXTextBookmark */ = C9319C3C1060DD85008EC371 /* PBXTextBookmark */;
+			C9319C3D1060DD85008EC371 /* PBXTextBookmark */ = C9319C3D1060DD85008EC371 /* PBXTextBookmark */;
+			C9319C3E1060DD85008EC371 /* PBXTextBookmark */ = C9319C3E1060DD85008EC371 /* PBXTextBookmark */;
+			C9319C3F1060DD85008EC371 /* PlistBookmark */ = C9319C3F1060DD85008EC371 /* PlistBookmark */;
+			C9BDE264102416C90017CFEA /* PBXTextBookmark */ = C9BDE264102416C90017CFEA /* PBXTextBookmark */;
+			C9BDE265102416C90017CFEA /* PBXTextBookmark */ = C9BDE265102416C90017CFEA /* PBXTextBookmark */;
+			C9BDE27A102417B80017CFEA /* PBXTextBookmark */ = C9BDE27A102417B80017CFEA /* PBXTextBookmark */;
+			C9BDE27C102417B80017CFEA /* PBXTextBookmark */ = C9BDE27C102417B80017CFEA /* PBXTextBookmark */;
+=======
+			C95F3BDF1034328600C7782D = C95F3BDF1034328600C7782D /* PBXTextBookmark */;
+			C95F3BE11034328600C7782D = C95F3BE11034328600C7782D /* PBXTextBookmark */;
+			C98C4436107C99D200712FB9 = C98C4436107C99D200712FB9 /* PlistBookmark */;
+			C98C4458107CCBE000712FB9 = C98C4458107CCBE000712FB9 /* PlistBookmark */;
+			C9F07260107630B000C098CA = C9F07260107630B000C098CA /* PBXTextBookmark */;
+			C9F07262107630B000C098CA = C9F07262107630B000C098CA /* PBXTextBookmark */;
+>>>>>>> .r1036
+		};
+		sourceControlManager = C96E4F580FE8DBD0001EFA9C /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	C92ACEEE0F4DEB4300CDC3B8 /* GLView.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {986, 5502}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{7419, 235}";
+		};
+	};
+<<<<<<< .mine
+	C9319C381060DD85008EC371 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94779370F3DE53A001B9FEB /* changes.txt */;
+		name = "changes.txt: 12";
+		rLen = 0;
+		rLoc = 261;
+		rType = 0;
+		vrLen = 718;
+		vrLoc = 0;
+	};
+	C9319C391060DD85008EC371 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C941CC130F1359B400738DAF /* Transport.m */;
+		name = "Transport.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 726;
+		vrLoc = 644;
+	};
+	C9319C3A1060DD85008EC371 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* FantaStickViewController.m */;
+		name = "FantaStickViewController.m: 206";
+		rLen = 0;
+		rLoc = 5671;
+		rType = 0;
+		vrLen = 842;
+		vrLoc = 0;
+	};
+	C9319C3B1060DD85008EC371 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = /Users/jusu/Desktop/Storage/tml/FantaStick/Info.plist;
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	C9319C3C1060DD85008EC371 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94779370F3DE53A001B9FEB /* changes.txt */;
+		name = "changes.txt: 12";
+		rLen = 0;
+		rLoc = 261;
+		rType = 0;
+		vrLen = 718;
+		vrLoc = 0;
+	};
+	C9319C3D1060DD85008EC371 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C941CC130F1359B400738DAF /* Transport.m */;
+		name = "Transport.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 726;
+		vrLoc = 644;
+	};
+	C9319C3E1060DD85008EC371 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* FantaStickViewController.m */;
+		name = "FantaStickViewController.m: 206";
+		rLen = 0;
+		rLoc = 5671;
+		rType = 0;
+		vrLen = 842;
+		vrLoc = 0;
+	};
+	C9319C3F1060DD85008EC371 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = /Users/jusu/Desktop/Storage/tml/FantaStick/Info.plist;
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	C941CC130F1359B400738DAF /* Transport.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {779, 2030}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{644, 726}";
+		};
+	};
+=======
+	C92ACFD90F4DFFD100CDC3B8 /* GLModel.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {687, 5404}}";
+			sepNavSelRange = "{2948, 23}";
+			sepNavVisRange = "{2291, 865}";
+		};
+	};
+	C941CD620F13B0C100738DAF /* TouchView.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {687, 5208}}";
+			sepNavSelRange = "{415, 0}";
+			sepNavVisRange = "{0, 861}";
+		};
+	};
+>>>>>>> .r1036
+	C94779370F3DE53A001B9FEB /* changes.txt */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {779, 440}}";
+			sepNavSelRange = "{261, 0}";
+			sepNavVisRange = "{0, 718}";
+		};
+	};
+	C95F3BDF1034328600C7782D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C92ACFD90F4DFFD100CDC3B8 /* GLModel.m */;
+		name = "GLModel.m: 157";
+		rLen = 23;
+		rLoc = 2948;
+		rType = 0;
+		vrLen = 865;
+		vrLoc = 2291;
+	};
+	C95F3BE11034328600C7782D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C92ACFD90F4DFFD100CDC3B8 /* GLModel.m */;
+		name = "GLModel.m: 157";
+		rLen = 23;
+		rLoc = 2948;
+		rType = 0;
+		vrLen = 865;
+		vrLoc = 2291;
+	};
+	C96E4F4B0FE8DBC2001EFA9C /* FantaStick */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = FantaStick;
+		savedGlobals = {
+		};
+		sourceDirectories = (
+		);
+	};
+	C96E4F580FE8DBD0001EFA9C /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+	};
+	C96E4F590FE8DBD0001EFA9C /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	C98C4436107C99D200712FB9 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = /Users/jusu/Desktop/trunk2/src/FantaStick/Info.plist;
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	C98C4458107CCBE000712FB9 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = /Users/jusu/Desktop/trunk2/src/FantaStick/Info.plist;
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	C9F07260107630B000C098CA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C941CD620F13B0C100738DAF /* TouchView.m */;
+		name = "TouchView.m: 21";
+		rLen = 0;
+		rLoc = 415;
+		rType = 0;
+<<<<<<< .mine
+		vrLen = 646;
+		vrLoc = 8592;
+	};
+	C9BDE27C102417B80017CFEA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C92ACEEE0F4DEB4300CDC3B8 /* GLView.m */;
+		name = "GLView.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 646;
+		vrLoc = 8592;
+	};
+=======
+		vrLen = 861;
+		vrLoc = 0;
+	};
+	C9F07262107630B000C098CA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C941CD620F13B0C100738DAF /* TouchView.m */;
+		name = "TouchView.m: 21";
+		rLen = 0;
+		rLoc = 415;
+		rType = 0;
+		vrLen = 861;
+		vrLoc = 0;
+	};
+>>>>>>> .r1036
+}

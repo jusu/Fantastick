@@ -1,0 +1,28 @@
+FIXES for 1.7
+
+- opengl fixed for iPad
+
+( FIX CHECKS FOR iPad / iPod! NOW DEFAULTING TO iPad! WRONG! )
+	- GLModel.m
+
+
+
+
+
+TODO
+
+- disable HUD display when pressing volume buttons
+
+- JITTER model loading - converting tri_grid to triangles ???
+- Message numbering, FS requests resend of missed messages
+- RESET command to restore initial state
+- Wavefront OBJ model support
+- obj model loading leaks some memory, doesn't support all objs, bender?
+- progressindicator while loading image?
+- control 2d-image layering, which image is visible and which one is not?
+- autoquit if nothing received in five minutes?
+
+
+FIX BEFORE 1.4 RELEASE
+
+

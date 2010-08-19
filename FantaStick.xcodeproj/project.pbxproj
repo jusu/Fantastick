@@ -1,0 +1,413 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* FantaStickAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* FantaStickAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		2899E5220DE3E06400AC0155 /* FantaStickViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* FantaStickViewController.xib */; };
+		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		28D7ACF80DDB3853001CB0EB /* FantaStickViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* FantaStickViewController.m */; };
+		C92ACE3D0F4DD67A00CDC3B8 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C92ACE3C0F4DD67A00CDC3B8 /* OpenGLES.framework */; };
+		C92ACE490F4DD69600CDC3B8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C92ACE480F4DD69600CDC3B8 /* QuartzCore.framework */; };
+		C92ACEEF0F4DEB4300CDC3B8 /* GLView.m in Sources */ = {isa = PBXBuildFile; fileRef = C92ACEEE0F4DEB4300CDC3B8 /* GLView.m */; };
+		C92ACFDA0F4DFFD100CDC3B8 /* GLModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C92ACFD90F4DFFD100CDC3B8 /* GLModel.m */; };
+		C941CC140F1359B400738DAF /* Transport.m in Sources */ = {isa = PBXBuildFile; fileRef = C941CC130F1359B400738DAF /* Transport.m */; };
+		C941CC620F13633E00738DAF /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C941CC610F13633E00738DAF /* CoreFoundation.framework */; };
+		C941CD630F13B0C100738DAF /* TouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = C941CD620F13B0C100738DAF /* TouchView.m */; };
+		C941D1290F155F1600738DAF /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C941D1270F155F1600738DAF /* icon.png */; };
+		C958D0650F18F103008E521A /* TouchImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C958D0640F18F103008E521A /* TouchImage.m */; };
+		C958D1510F191F4F008E521A /* nodata.png in Resources */ = {isa = PBXBuildFile; fileRef = C958D1500F191F4F008E521A /* nodata.png */; };
+		C97CECFC0F6E6C630074AF06 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97CECFB0F6E6C630074AF06 /* MediaPlayer.framework */; };
+		C980564A11BAC5BF00B58528 /* MainWindow-ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9D6E4C41110EA4C00B9D40F /* MainWindow-ipad.xib */; };
+		C980564B11BAC5C400B58528 /* FantaStickViewController-ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9D6E4C51110EA4C00B9D40F /* FantaStickViewController-ipad.xib */; };
+		C99D7D7F0F7B667D008B6A4B /* Texture2D.m in Sources */ = {isa = PBXBuildFile; fileRef = C99D7D7E0F7B667D008B6A4B /* Texture2D.m */; };
+		C9B2CB770F70E0590071ABBD /* FSCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B2CB760F70E0590071ABBD /* FSCache.m */; };
+		C9D0037E11F06A6800F1B20A /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D0037D11F06A6800F1B20A /* AsyncUdpSocket.m */; };
+		C9EFDEC811BEAA8F0084EB99 /* icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = C9EFDEC711BEAA8F0084EB99 /* icon-72.png */; };
+		C9EFDEE211BEAC830084EB99 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9EFDEE111BEAC830084EB99 /* Entitlements.plist */; };
+		C9FEE1170F162D150055F151 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C9FEE1160F162D150055F151 /* Settings.bundle */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* FantaStickAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FantaStickAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* FantaStickAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FantaStickAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* Fantastick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fantastick.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2899E5210DE3E06400AC0155 /* FantaStickViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FantaStickViewController.xib; sourceTree = "<group>"; };
+		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		28D7ACF60DDB3853001CB0EB /* FantaStickViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FantaStickViewController.h; sourceTree = "<group>"; };
+		28D7ACF70DDB3853001CB0EB /* FantaStickViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FantaStickViewController.m; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* FantaStick_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FantaStick_Prefix.pch; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C92ACE3C0F4DD67A00CDC3B8 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		C92ACE480F4DD69600CDC3B8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C92ACEED0F4DEB4300CDC3B8 /* GLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLView.h; sourceTree = "<group>"; };
+		C92ACEEE0F4DEB4300CDC3B8 /* GLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLView.m; sourceTree = "<group>"; };
+		C92ACFD80F4DFFD100CDC3B8 /* GLModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLModel.h; sourceTree = "<group>"; };
+		C92ACFD90F4DFFD100CDC3B8 /* GLModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLModel.m; sourceTree = "<group>"; };
+		C941CC120F1359B400738DAF /* Transport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transport.h; sourceTree = "<group>"; };
+		C941CC130F1359B400738DAF /* Transport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transport.m; sourceTree = "<group>"; };
+		C941CC610F13633E00738DAF /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
+		C941CD610F13B0C100738DAF /* TouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchView.h; sourceTree = "<group>"; };
+		C941CD620F13B0C100738DAF /* TouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchView.m; sourceTree = "<group>"; };
+		C941D1270F155F1600738DAF /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		C94779370F3DE53A001B9FEB /* changes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = changes.txt; sourceTree = "<group>"; };
+		C958D0630F18F103008E521A /* TouchImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchImage.h; sourceTree = "<group>"; };
+		C958D0640F18F103008E521A /* TouchImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchImage.m; sourceTree = "<group>"; };
+		C958D1500F191F4F008E521A /* nodata.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nodata.png; sourceTree = "<group>"; };
+		C97CECFB0F6E6C630074AF06 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		C99D7D7D0F7B667D008B6A4B /* Texture2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture2D.h; sourceTree = "<group>"; };
+		C99D7D7E0F7B667D008B6A4B /* Texture2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Texture2D.m; sourceTree = "<group>"; };
+		C9AF40EB111A2D3E00874E37 /* FSBlockInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSBlockInfo.h; sourceTree = "<group>"; };
+		C9B2CB750F70E0590071ABBD /* FSCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCache.h; sourceTree = "<group>"; };
+		C9B2CB760F70E0590071ABBD /* FSCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCache.m; sourceTree = "<group>"; };
+		C9D0037C11F06A6800F1B20A /* AsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncUdpSocket.h; sourceTree = "<group>"; };
+		C9D0037D11F06A6800F1B20A /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
+		C9D6E4C41110EA4C00B9D40F /* MainWindow-ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-ipad.xib"; path = "Resources-iPad/MainWindow-ipad.xib"; sourceTree = "<group>"; };
+		C9D6E4C51110EA4C00B9D40F /* FantaStickViewController-ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "FantaStickViewController-ipad.xib"; path = "Resources-iPad/FantaStickViewController-ipad.xib"; sourceTree = "<group>"; };
+		C9EFDEC711BEAA8F0084EB99 /* icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-72.png"; sourceTree = "<group>"; };
+		C9EFDEE111BEAC830084EB99 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
+		C9FEE1160F162D150055F151 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
+				C941CC620F13633E00738DAF /* CoreFoundation.framework in Frameworks */,
+				C92ACE3D0F4DD67A00CDC3B8 /* OpenGLES.framework in Frameworks */,
+				C92ACE490F4DD69600CDC3B8 /* QuartzCore.framework in Frameworks */,
+				C97CECFC0F6E6C630074AF06 /* MediaPlayer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C9AF40EB111A2D3E00874E37 /* FSBlockInfo.h */,
+				C958D0630F18F103008E521A /* TouchImage.h */,
+				C958D0640F18F103008E521A /* TouchImage.m */,
+				C9D0037C11F06A6800F1B20A /* AsyncUdpSocket.h */,
+				C9D0037D11F06A6800F1B20A /* AsyncUdpSocket.m */,
+				C941CC120F1359B400738DAF /* Transport.h */,
+				C941CC130F1359B400738DAF /* Transport.m */,
+				1D3623240D0F684500981E51 /* FantaStickAppDelegate.h */,
+				1D3623250D0F684500981E51 /* FantaStickAppDelegate.m */,
+				28D7ACF60DDB3853001CB0EB /* FantaStickViewController.h */,
+				28D7ACF70DDB3853001CB0EB /* FantaStickViewController.m */,
+				C941CD610F13B0C100738DAF /* TouchView.h */,
+				C941CD620F13B0C100738DAF /* TouchView.m */,
+				C92ACEED0F4DEB4300CDC3B8 /* GLView.h */,
+				C92ACEEE0F4DEB4300CDC3B8 /* GLView.m */,
+				C92ACFD80F4DFFD100CDC3B8 /* GLModel.h */,
+				C92ACFD90F4DFFD100CDC3B8 /* GLModel.m */,
+				C99D7D7D0F7B667D008B6A4B /* Texture2D.h */,
+				C99D7D7E0F7B667D008B6A4B /* Texture2D.m */,
+				C9B2CB750F70E0590071ABBD /* FSCache.h */,
+				C9B2CB760F70E0590071ABBD /* FSCache.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* Fantastick.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				C9FEE1160F162D150055F151 /* Settings.bundle */,
+				C94779370F3DE53A001B9FEB /* changes.txt */,
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* FantaStick_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				2899E5210DE3E06400AC0155 /* FantaStickViewController.xib */,
+				C9D6E4C41110EA4C00B9D40F /* MainWindow-ipad.xib */,
+				C9D6E4C51110EA4C00B9D40F /* FantaStickViewController-ipad.xib */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+				C941D1270F155F1600738DAF /* icon.png */,
+				C9EFDEC711BEAA8F0084EB99 /* icon-72.png */,
+				C958D1500F191F4F008E521A /* nodata.png */,
+				C9EFDEE111BEAC830084EB99 /* Entitlements.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C97CECFB0F6E6C630074AF06 /* MediaPlayer.framework */,
+				C92ACE480F4DD69600CDC3B8 /* QuartzCore.framework */,
+				C92ACE3C0F4DD67A00CDC3B8 /* OpenGLES.framework */,
+				C941CC610F13633E00738DAF /* CoreFoundation.framework */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* FantaStick */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "FantaStick" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FantaStick;
+			productName = FantaStick;
+			productReference = 1D6058910D05DD3D006BFB54 /* Fantastick.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "FantaStick" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* FantaStick */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				C980564A11BAC5BF00B58528 /* MainWindow-ipad.xib in Resources */,
+				2899E5220DE3E06400AC0155 /* FantaStickViewController.xib in Resources */,
+				C980564B11BAC5C400B58528 /* FantaStickViewController-ipad.xib in Resources */,
+				C941D1290F155F1600738DAF /* icon.png in Resources */,
+				C9FEE1170F162D150055F151 /* Settings.bundle in Resources */,
+				C958D1510F191F4F008E521A /* nodata.png in Resources */,
+				C9EFDEC811BEAA8F0084EB99 /* icon-72.png in Resources */,
+				C9EFDEE211BEAC830084EB99 /* Entitlements.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* FantaStickAppDelegate.m in Sources */,
+				28D7ACF80DDB3853001CB0EB /* FantaStickViewController.m in Sources */,
+				C941CC140F1359B400738DAF /* Transport.m in Sources */,
+				C941CD630F13B0C100738DAF /* TouchView.m in Sources */,
+				C958D0650F18F103008E521A /* TouchImage.m in Sources */,
+				C92ACEEF0F4DEB4300CDC3B8 /* GLView.m in Sources */,
+				C92ACFDA0F4DFFD100CDC3B8 /* GLModel.m in Sources */,
+				C9B2CB770F70E0590071ABBD /* FSCache.m in Sources */,
+				C99D7D7F0F7B667D008B6A4B /* Texture2D.m in Sources */,
+				C9D0037E11F06A6800F1B20A /* AsyncUdpSocket.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = FantaStick_Prefix.pch;
+				GCC_THUMB_SUPPORT = NO;
+				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				PRODUCT_NAME = Fantastick;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos3.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = FantaStick_Prefix.pch;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_UNROLL_LOOPS = YES;
+				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 2.2;
+				PRODUCT_NAME = Fantastick;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos3.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Juha Vehviläinen";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "270DC600-8242-434C-9F29-3C8BBCE7D8D7";
+				SDKROOT = iphonesimulator3.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "";
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_UNROLL_LOOPS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				PREBINDING = NO;
+				SDKROOT = iphoneos2.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "";
+			};
+			name = Release;
+		};
+		C907175211BADD44006A11BF /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Pink Twins";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_UNROLL_LOOPS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				PREBINDING = NO;
+				SDKROOT = iphoneos2.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "";
+			};
+			name = Distribution;
+		};
+		C907175311BADD44006A11BF /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				COPY_PHASE_STRIP = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = FantaStick_Prefix.pch;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_UNROLL_LOOPS = YES;
+				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				PRODUCT_NAME = Fantastick;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos3.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Distribution;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "FantaStick" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+				C907175311BADD44006A11BF /* Distribution */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "FantaStick" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+				C907175211BADD44006A11BF /* Distribution */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
