@@ -28,6 +28,9 @@ GLfloat squareTextures[] = {
 
 @end
 
+static float cameraX = 0.0f;
+static float cameraY = 0.0f;
+
 @implementation GLModel
 
 - (id)initWithBytes: (char*)a
@@ -359,7 +362,10 @@ GLfloat squareTextures[] = {
 	glRotatef(0.0, 0.0, 0.0, 1.0);
 	glScalef(1.0f, -1.001f, 1.0f);
 #endif
-		
+
+	// translate with global camera offset, for scrolling
+	glTranslatef(cameraX, cameraY, 0.0f);
+
 	glLineWidth(lineWidth);
 	
 	glColor4f(color[0], color[1], color[2], color[3]);
@@ -414,6 +420,12 @@ GLfloat squareTextures[] = {
 	if(text2d) {
 		[text2d deleteTexture];
 	}
+}
+
++ (void) setCamera: (float)x Y: (float)y
+{
+	cameraX = x;
+	cameraY = y;
 }
 
 - (void) dealloc

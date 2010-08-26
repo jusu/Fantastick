@@ -34,6 +34,8 @@
 
 - (void)hideStartupAnimation;
 
++ (void) setTouchOffset: (int)x Y: (int)y;
+
 @property (nonatomic, retain) id glview;
 
 @end

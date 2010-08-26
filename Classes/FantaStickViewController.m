@@ -12,6 +12,9 @@
 
 @implementation FantaStickViewController
 
+int touchOffsetX = 0;
+int touchOffsetY = 0;
+
 @synthesize glview;
 
 /*
@@ -101,7 +104,7 @@
 - (void)transportDone
 {
 	[self hideStartupAnimation];
-	[transport send:@"FantaStick init 1.8"];
+	[transport send:@"FantaStick init 1.9"];
 	// Send our IP over every second until we receive something.
 	NSString *sIP = @"IP ";
 	NSString *sMsg = [sIP stringByAppendingString: transport.myip];
@@ -126,6 +129,7 @@
 
 - (void)sendTouches:(NSSet*)touches mode: (int) m
 {
+	int a, b;
 	BOOL allEnded = YES;
 	for(UITouch *touch in touches) {
 		// UITouch* is persistent thru touch, transform pointer to unique number
@@ -174,12 +178,15 @@
 				prefix = 'S';
 		}
 
-		NSString *str = [[NSString alloc] initWithFormat: @"%c %ld %ld %ld", prefix, lrintf(loc.x), lrintf(loc.y), nID + 1];
+		NSString *str = [[NSString alloc] initWithFormat: @"%c %ld %ld %ld", prefix,
+						 a = touchOffsetX + lrintf(loc.x),
+						 b = touchOffsetY + lrintf(loc.y),
+						 nID + 1];
 		[transport send: str];
 		[str release];
 		
 		if([glview jsActive]) {
-			[glview touch: prefix x: lrintf(loc.x) y: lrintf(loc.y) num: nID + 1];
+			[glview touch: prefix x: a y: b num: nID + 1];
 		}
 	}
 
@@ -192,6 +199,12 @@
 		for(int n=0; n<kFingersMax; n++)
 			fingers[n] = 0;
 	}
+}
+
++ (void) setTouchOffset: (int)x Y: (int)y
+{
+	touchOffsetX = x;
+	touchOffsetY = y;
 }
 
 - (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event

@@ -53,4 +53,7 @@
 - (void)draw;
 - (void)clear;
 
+// Set global camera offset
++ (void) setCamera: (float)x Y: (float)y;
+
 @end

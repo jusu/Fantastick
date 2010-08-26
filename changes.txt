@@ -1,6 +1,7 @@
 
 
 1.9: added experimental js features
+added camera and offset commands
 
 
 

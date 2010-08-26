@@ -13,6 +13,7 @@
 #import "FSCache.h"
 #import "FSBlockInfo.h"
 #import "Transport.h"
+#import "FantaStickViewController.h"
 
 #define kSquareX 200.0
 #define kSquareY 200.0
@@ -68,7 +69,7 @@ kSquareX,   kSquareY
 			   "var touch = function(type, x, y, id) {}; var accel = function(x, y, z) {};"
 			   "var fs = { cmd: function(s) { _cmdq.push('0'+s); }, send: function(s) { _cmdq.push('1'+s); } };"];
 		jsCode = [[NSMutableArray alloc] init];
-		
+
 		jsTimer = nil;
 	}
     return self;
@@ -340,7 +341,8 @@ kSquareX,   kSquareY
 	}
 }
 
-char buffer[8192];
+#define BUFFERMAXLEN 8192
+char buffer[8200];
 
 - (void)handleMessage: (id)msg
 {
@@ -354,6 +356,10 @@ char buffer[8192];
 	short len = [d length];
 	if(s[len-1] == 32) {
 		s[len-1] = 0;
+	}
+
+	if(len > BUFFERMAXLEN) {
+		len = BUFFERMAXLEN;
 	}
 
 	bcopy(s, buffer, len);
@@ -462,7 +468,34 @@ char buffer[8192];
 		if(jsTimer == nil) {
 			[self performSelectorOnMainThread: @selector(startJSAnimation) withObject: nil waitUntilDone: NO];
 		}
+	} else
+	if(strncmp(cmd, "camera ", 7) == 0) {
+		cmd += 7;
+		if(!cmd)
+			return;
+		int i=0;
+		float cam[2];
+		cam[0] = 0.0f;
+		cam[1] = 0.0f;
+		for(cmd = strtok(cmd, " "); i<2 && cmd; i++, cmd = strtok(NULL, " ")) {
+			cam[i] = atof(cmd);
+		}
+		[GLModel setCamera: -cam[0] Y: -cam[1]];
+	} else
+	if(strncmp(cmd, "offset ", 7) == 0) {
+		cmd += 7;
+		if(!cmd)
+			return;
+		int i=0;
+		int offset[2];
+		offset[0] = 0.0f;
+		offset[1] = 0.0f;
+		for(cmd = strtok(cmd, " "); i<2 && cmd; i++, cmd = strtok(NULL, " ")) {
+			offset[i] = atoi(cmd);
+		}
+		[FantaStickViewController setTouchOffset: offset[0] Y: offset[1]];
 	}
+	
 }
 
 - (void)dealloc {
