@@ -15,15 +15,23 @@
 
 BOOL isReceivingFromPureData = NO;
 static id tw_w = NULL;
+static Transport* sharedTransport = NULL;
 
 @implementation Transport
 
 @synthesize myip;
 @synthesize isInitOK;
 
++ (Transport*) sharedTransport
+{
+	return sharedTransport;
+}
+
 - initAndConnect;
 {
 	[super init];
+
+	sharedTransport = self;
 
 	isInitOK = NO;
 
@@ -105,7 +113,7 @@ static id tw_w = NULL;
 
 - (NSString *)getIPAddress
 {
-	NSString *address = @"error";
+	NSString *address = @"127.0.0.1";
 	struct ifaddrs *interfaces = NULL;
 	struct ifaddrs *temp_addr = NULL;
 	int success = 0;

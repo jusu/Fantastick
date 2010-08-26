@@ -12,6 +12,7 @@
 #import "GLModel.h"
 #import "FSCache.h"
 #import "FSBlockInfo.h"
+#import "Transport.h"
 
 #define kSquareX 200.0
 #define kSquareY 200.0
@@ -62,10 +63,13 @@ kSquareX,   kSquareY
 		[web loadHTMLString: @"<html></html>" baseURL: [NSURL URLWithString: @"file:///"]];
 		NSString *res = [web stringByEvaluatingJavaScriptFromString: @"(function(){ return 42; })();"];
 		res = [web stringByEvaluatingJavaScriptFromString: @"var draw = function(){}"];
-		res = [web stringByEvaluatingJavaScriptFromString: @"var cmdq = []; var draw = function() {};"
-			   "var cmdq_poll = function() { var s; draw(); s = cmdq.join(':'); cmdq = []; return s; };"
-			   "var touch = function(type, x, y, id) {};"];
+		res = [web stringByEvaluatingJavaScriptFromString: @"var _cmdq = []; var draw = function() {};"
+			   "var _cmdq_poll = function() { var s; draw(); s = _cmdq.join('°'); _cmdq = []; return s; };"
+			   "var touch = function(type, x, y, id) {};"
+			   "var fs = { cmd: function(s) { _cmdq.push('0'+s); }, send: function(s) { _cmdq.push('1'+s); } };"];
 		jsCode = [[NSMutableArray alloc] init];
+		
+		jsTimer = nil;
 	}
     return self;
 }
@@ -157,7 +161,6 @@ kSquareX,   kSquareY
 - (void)startOpenGLAnimation
 {
 	animationTimer = [NSTimer scheduledTimerWithTimeInterval:animationInterval target:self selector:@selector(drawView) userInfo:nil repeats:YES];
-	[self performSelectorOnMainThread: @selector(startJSAnimation) withObject: nil waitUntilDone: NO];
 }
 
 - (void)stopOpenGLAnimation
@@ -207,11 +210,18 @@ kSquareX,   kSquareY
 		[js release];
 	}
 
-	NSString *s = [web stringByEvaluatingJavaScriptFromString: @"cmdq_poll();"];
+	NSString *s = [web stringByEvaluatingJavaScriptFromString: @"_cmdq_poll();"];
 	if(s.length > 0) {
-		NSArray *a = [s componentsSeparatedByString: @":"];
+		NSArray *a = [s componentsSeparatedByString: @"°"];
 		for(NSString *cmd in a) {
-			[self processCommand: (char*)[cmd cStringUsingEncoding: NSASCIIStringEncoding]];
+			char *s = (char*)[cmd cStringUsingEncoding: NSASCIIStringEncoding];
+			if(s && s[0] == '0') { // cmd
+				[self processCommand: s+1];
+			} else {
+				if(s && s[0] == '1') { // send
+					[[Transport sharedTransport] send: [NSString stringWithFormat: @"%s", s+1]];
+				}
+			}
 		}
 	}
 }
@@ -411,9 +421,21 @@ char buffer[8192];
 		[self stopOpenGLAnimation];
 		self.hidden = YES;
 		[TouchView activate];
-	} else {
+	} else
 	if(strncmp(cmd, "js ", 3) == 0) {
 		cmd += 3;
+		NSString *s = [[NSString alloc] initWithCString: cmd];
+		@synchronized(jsCode) {
+			[jsCode addObject: s];
+		}
+		[s release];
+		
+		if(jsTimer == nil) {
+			[self performSelectorOnMainThread: @selector(startJSAnimation) withObject: nil waitUntilDone: NO];
+		}
+	} else
+	if(strncmp(cmd, "jsurl ", 6) == 0) {
+		cmd += 6;
 		NSString *us = [[NSString alloc] initWithCString: cmd];
 		NSURL *u = [[NSURL alloc] initWithString: us];
 		NSString *s = [[NSString alloc] initWithContentsOfURL: u];
@@ -425,7 +447,10 @@ char buffer[8192];
 		[s release];
 		[u release];
 		[us release];
-	}
+
+		if(jsTimer == nil) {
+			[self performSelectorOnMainThread: @selector(startJSAnimation) withObject: nil waitUntilDone: NO];
+		}
 	}
 }
 

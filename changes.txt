@@ -1,14 +1,12 @@
 
 
-
-todo:
-
-- disable all js until first time js file is loaded
-- texture loading from js code?
+1.9: added experimental js features
 
 
 
 
+
+1.8: fixes pure data data
 
 
 ===================

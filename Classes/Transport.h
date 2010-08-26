@@ -21,6 +21,8 @@
 @property (retain) NSString* myip;
 @property BOOL isInitOK;
 
++ (Transport*) sharedTransport;
+
 // init and connect to host defined in settings bundle, prepare to receive
 - initAndConnect;
 - (void)runLoop;
