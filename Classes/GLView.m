@@ -65,7 +65,7 @@ kSquareX,   kSquareY
 		res = [web stringByEvaluatingJavaScriptFromString: @"var draw = function(){}"];
 		res = [web stringByEvaluatingJavaScriptFromString: @"var _cmdq = []; var draw = function() {};"
 			   "var _cmdq_poll = function() { var s; draw(); s = _cmdq.join('°'); _cmdq = []; return s; };"
-			   "var touch = function(type, x, y, id) {};"
+			   "var touch = function(type, x, y, id) {}; var accel = function(x, y, z) {};"
 			   "var fs = { cmd: function(s) { _cmdq.push('0'+s); }, send: function(s) { _cmdq.push('1'+s); } };"];
 		jsCode = [[NSMutableArray alloc] init];
 		
@@ -226,6 +226,11 @@ kSquareX,   kSquareY
 	}
 }
 
+-(BOOL)jsActive
+{
+	return jsTimer != nil;
+}
+
 // evaluate js right away (instead of periodic polling)
 - (void) doJS: (NSString*) s
 {
@@ -235,6 +240,12 @@ kSquareX,   kSquareY
 -(void)touch: (char) type x: (int) xpos y: (int) ypos num: (int) finger
 {
 	NSString *s = [NSString stringWithFormat: @"touch('%c', %d, %d, %d);", type, xpos, ypos, finger];
+	[self doJS: s];
+}
+
+-(void)accelxacc: (double)x yacc: (double)y zacc: (double)z;
+{
+	NSString *s = [NSString stringWithFormat: @"accel(%f, %f, %f);", x, y, z];
 	[self doJS: s];
 }
 

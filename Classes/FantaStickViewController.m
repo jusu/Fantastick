@@ -178,7 +178,9 @@
 		[transport send: str];
 		[str release];
 		
-		[glview touch: prefix x: lrintf(loc.x) y: lrintf(loc.y) num: nID + 1];
+		if([glview jsActive]) {
+			[glview touch: prefix x: lrintf(loc.x) y: lrintf(loc.y) num: nID + 1];
+		}
 	}
 
 	NSString *str = [[NSString alloc] initWithFormat: @"X %d", [touches count]];
@@ -216,6 +218,11 @@
 	z = acceleration.z;
 
 	[transport send: [NSString stringWithFormat: @"A %f %f %f", x, y, z]];
+	
+	if([glview jsActive]) {
+		[glview accelxacc: x yacc: y zacc: z];
+	}
+	
 }
 
 /*

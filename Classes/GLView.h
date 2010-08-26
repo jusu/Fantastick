@@ -48,7 +48,9 @@
 -(void)stopOpenGLAnimation;
 -(void)drawGLView;
 -(void)handleMessage: (id)msg;
+-(BOOL)jsActive;
 -(void)touch: (char)type x: (int)xpos y: (int)ypos num: (int)finger;
+-(void)accelxacc: (double)x yacc: (double)y zacc: (double)z;
 @property (nonatomic, retain) id controller;
 @property (nonatomic, retain) id TouchView;
 
