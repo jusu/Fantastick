@@ -195,20 +195,16 @@ kSquareX,   kSquareY
 
 - (void) pollJS
 {
-	NSString *js = nil;
 	@synchronized(jsCode) {
-		if([jsCode count]) {
-			js = [[jsCode objectAtIndex: 0] retain];
-			[jsCode removeObjectAtIndex: 0];
+		for(NSString *js in jsCode) {
+			if(js) {
+				NSString *res = [web stringByEvaluatingJavaScriptFromString: js];
+				if(res.length) {
+					NSLog(@"js '%@'", res);
+				}
+			}
 		}
-	}
-
-	if(js) {
-		NSString *res = [web stringByEvaluatingJavaScriptFromString: js];
-		if(res.length) {
-			NSLog(@"js '%@'", res);
-		}
-		[js release];
+		[jsCode removeAllObjects];
 	}
 
 	NSString *s = [web stringByEvaluatingJavaScriptFromString: @"_cmdq_poll();"];
