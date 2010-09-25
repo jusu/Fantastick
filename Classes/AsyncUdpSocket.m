@@ -1911,7 +1911,11 @@ static void MyCFSocketCallback(CFSocketRef, CFSocketCallBackType, CFDataRef, con
 				// If it wasn't bound before, it's bound now
 				theFlags |= kDidBind;
 				
-				[self completeCurrentSend];
+				@try {
+					[self completeCurrentSend];
+				} @catch(NSException *ex) {
+					//NSLog(@"completeCurrentSend excepted.");
+				}
 			}
 			
 			[self scheduleDequeueSend];

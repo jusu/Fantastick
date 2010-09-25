@@ -55,7 +55,8 @@ static Transport* sharedTransport = NULL;
 	
 	// init
 	sendsocket = [[AsyncUdpSocket alloc] init];
-	recvsocket = [[AsyncUdpSocket alloc] initWithDelegate: self];
+	recvsocket = [[AsyncUdpSocket alloc] initIPv4];
+	[recvsocket setDelegate: self];
 
 	if(![recvsocket bindToPort: inport error: nil]) {
 		// FIXME: report binding error
@@ -97,7 +98,7 @@ static Transport* sharedTransport = NULL;
 	}
 
 	[recvsocket receiveWithTimeout: -1 tag: 0];
-	return YES;
+	return NO;
 }
 
 - (void)send: (NSString*)msg

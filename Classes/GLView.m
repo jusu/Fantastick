@@ -209,15 +209,24 @@ kSquareX,   kSquareY
 
 	NSString *s = [web stringByEvaluatingJavaScriptFromString: @"_cmdq_poll();"];
 	if(s.length > 0) {
-		NSArray *a = [s componentsSeparatedByString: @"°"];
-		for(NSString *cmd in a) {
-			char *s = (char*)[cmd cStringUsingEncoding: NSASCIIStringEncoding];
-			if(s && s[0] == '0') { // cmd
-				[self processCommand: s+1];
+		char *next, *js = (char*)[s cStringUsingEncoding: NSUTF8StringEncoding];
+		while(js) {
+			next = strstr(js, "\xc2\xb0"); // °
+			if(next) {
+				next[0] = 0;
+			}
+
+			if(js[0] == '0') { // cmd
+				[self processCommand: js+1];
 			} else {
-				if(s && s[0] == '1') { // send
-					[[Transport sharedTransport] send: [NSString stringWithFormat: @"%s", s+1]];
+				if(js[0] == '1') { // send
+					[[Transport sharedTransport] send: [NSString stringWithFormat: @"%s", js+1]];
 				}
+			}
+
+			js = next;
+			if(js) {
+				js += 2;
 			}
 		}
 	}
