@@ -98,7 +98,7 @@ static Transport* sharedTransport = NULL;
 	}
 
 	[recvsocket receiveWithTimeout: -1 tag: 0];
-	return NO;
+	return YES;
 }
 
 - (void)send: (NSString*)msg
