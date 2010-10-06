@@ -7,20 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AsyncUdpSocket.h"
 #import "UDPEcho.h"
 
 @interface Transport : NSObject <UDPEchoDelegate> {
-	AsyncUdpSocket *sendsocket;
+	UDPEcho *sender;
 	UDPEcho *receiver;
 
 	NSString *myip;
 	BOOL isInitOK;
+	BOOL isInitDone;
 	BOOL isPureDataMessageTermination;
 }
 
 @property (retain) NSString* myip;
-@property BOOL isInitOK;
+@property BOOL isInitOK, isInitDone;
 
 + (Transport*) sharedTransport;
 
@@ -31,5 +31,7 @@
 
 - (void) send: (NSString*)msg;
 - (void) echo:(UDPEcho *)echo didReceiveData:(NSData *)data fromAddress:(NSData *)addr;
+- (void) echo:(UDPEcho *)echo didStartWithAddress:(NSData *)address;
+- (void) echo:(UDPEcho *)echo didStopWithError:(NSError *)error;
 
 @end

@@ -84,6 +84,10 @@ int touchOffsetY = 0;
 	NSAutoreleasePool *initpool = [[NSAutoreleasePool alloc] init];
 
 	transport = [[Transport alloc] initAndConnect];
+	while(!transport.isInitDone) {
+		CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0.1, false);
+	}
+
 	if(transport.isInitOK) {
 		[self performSelectorOnMainThread: @selector(transportDone) withObject: nil waitUntilDone: NO];
 
@@ -104,7 +108,7 @@ int touchOffsetY = 0;
 - (void)transportDone
 {
 	[self hideStartupAnimation];
-	[transport send:@"FantaStick init 1.9"];
+	[transport send:@"FantaStick init 2.1"];
 	// Send our IP over every second until we receive something.
 	NSString *sIP = @"IP ";
 	NSString *sMsg = [sIP stringByAppendingString: transport.myip];

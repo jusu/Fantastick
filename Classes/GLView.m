@@ -346,8 +346,8 @@ kSquareX,   kSquareY
 	}
 }
 
-#define BUFFERMAXLEN 8192
-char buffer[8200];
+#define BUFFERMAXLEN 65536
+char buffer[BUFFERMAXLEN+4];
 
 - (void)handleMessage: (id)msg
 {
@@ -358,7 +358,7 @@ char buffer[8200];
 	
 	unsigned char *s = (unsigned char*)[d bytes];
 	// if last character is space, zero it. Fixes strange bug with Max/MSP and js object
-	short len = [d length];
+	int len = [d length];
 	if(s[len-1] == 32) {
 		s[len-1] = 0;
 	}

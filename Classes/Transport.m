@@ -21,6 +21,7 @@ static Transport* sharedTransport = NULL;
 
 @synthesize myip;
 @synthesize isInitOK;
+@synthesize isInitDone;
 
 + (Transport*) sharedTransport
 {
@@ -33,7 +34,7 @@ static Transport* sharedTransport = NULL;
 
 	sharedTransport = self;
 
-	isInitOK = NO;
+	isInitDone = isInitOK = NO;
 
 	// Settings
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -54,25 +55,38 @@ static Transport* sharedTransport = NULL;
 	isReceivingFromPureData = isPureDataMessageTermination;
 	
 	// init
-	sendsocket = [[AsyncUdpSocket alloc] init];
+	sender = [[UDPEcho alloc] init];
+	sender.delegate = self;
+	[sender startConnectedToHostName: sHostname port: outport];
 
 	receiver = [[UDPEcho alloc] init];
 	receiver.delegate = self;
 	[receiver startServerOnPort: inport];
-
-	if(![sendsocket connectToHost: sHostname onPort: outport error: nil]) {
-		return self;
-	}
-
+	
 	self.myip = [self getIPAddress];
 
-	isInitOK = YES;
 	return self;
 }
 
 - (void)runLoop
 {
 	CFRunLoopRun();
+}
+
+- (void) echo:(UDPEcho *)echo didStartWithAddress:(NSData *)address
+{
+	if(echo == sender) {
+		isInitOK = YES;
+		isInitDone = YES;
+	}
+}
+
+- (void) echo:(UDPEcho *)echo didStopWithError:(NSError *)error
+{
+	if(echo == sender) {
+		isInitOK = NO;
+		isInitDone = YES;
+	}
 }
 
 - (void) echo: (UDPEcho *)echo didReceiveData: (NSData *)data fromAddress: (NSData *)addr
@@ -101,7 +115,7 @@ static Transport* sharedTransport = NULL;
 
 	NSData* d = [msg dataUsingEncoding:NSISOLatin1StringEncoding];
 
-	[sendsocket sendData: d withTimeout: -1 tag: 0];
+	[sender sendData: d];
 }
 
 - (NSString *)getIPAddress
@@ -141,7 +155,7 @@ static Transport* sharedTransport = NULL;
 
 - (void) dealloc
 {
-	[sendsocket release];
+	[sender release];
 	[receiver release];
 	[super dealloc];
 }
