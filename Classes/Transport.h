@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "AsyncUdpSocket.h"
+#import "UDPEcho.h"
 
-@interface Transport : NSObject {
+@interface Transport : NSObject <UDPEchoDelegate> {
 	AsyncUdpSocket *sendsocket;
-	AsyncUdpSocket *recvsocket;
+	UDPEcho *receiver;
 
 	NSString *myip;
 	BOOL isInitOK;
@@ -25,10 +26,10 @@
 
 // init and connect to host defined in settings bundle, prepare to receive
 - initAndConnect;
-- (void)runLoop;
-- (NSString *)getIPAddress;
+- (void) runLoop;
+- (NSString *) getIPAddress;
 
-- (void)send: (NSString*)msg;
-- (BOOL)onUdpSocket:(AsyncUdpSocket *)sock didReceiveData:(NSData *)data withTag:(long)tag fromHost:(NSString *)host port:(UInt16)port;
+- (void) send: (NSString*)msg;
+- (void) echo:(UDPEcho *)echo didReceiveData:(NSData *)data fromAddress:(NSData *)addr;
 
 @end

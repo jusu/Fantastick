@@ -55,19 +55,14 @@ static Transport* sharedTransport = NULL;
 	
 	// init
 	sendsocket = [[AsyncUdpSocket alloc] init];
-	recvsocket = [[AsyncUdpSocket alloc] initIPv4];
-	[recvsocket setDelegate: self];
 
-	if(![recvsocket bindToPort: inport error: nil]) {
-		// FIXME: report binding error
-		return self;
-	}
+	receiver = [[UDPEcho alloc] init];
+	receiver.delegate = self;
+	[receiver startServerOnPort: inport];
 
 	if(![sendsocket connectToHost: sHostname onPort: outport error: nil]) {
 		return self;
 	}
-
-	[recvsocket receiveWithTimeout: -1 tag: 0];
 
 	self.myip = [self getIPAddress];
 
@@ -80,7 +75,7 @@ static Transport* sharedTransport = NULL;
 	CFRunLoopRun();
 }
 
-- (BOOL)onUdpSocket:(AsyncUdpSocket *)sock didReceiveData:(NSData *)data withTag:(long)tag fromHost:(NSString *)host port:(UInt16)port
+- (void) echo: (UDPEcho *)echo didReceiveData: (NSData *)data fromAddress: (NSData *)addr
 {
 	if(!tw_w) {
 		tw_w = [[[UIApplication sharedApplication] keyWindow] viewWithTag: 666];
@@ -96,9 +91,6 @@ static Transport* sharedTransport = NULL;
 	} else {
 		[tw_w handleMessage: data];
 	}
-
-	[recvsocket receiveWithTimeout: -1 tag: 0];
-	return YES;
 }
 
 - (void)send: (NSString*)msg
@@ -150,7 +142,7 @@ static Transport* sharedTransport = NULL;
 - (void) dealloc
 {
 	[sendsocket release];
-	[recvsocket release];
+	[receiver release];
 	[super dealloc];
 }
 

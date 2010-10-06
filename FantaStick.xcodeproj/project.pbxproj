@@ -19,6 +19,8 @@
 		C92ACE490F4DD69600CDC3B8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C92ACE480F4DD69600CDC3B8 /* QuartzCore.framework */; };
 		C92ACEEF0F4DEB4300CDC3B8 /* GLView.m in Sources */ = {isa = PBXBuildFile; fileRef = C92ACEEE0F4DEB4300CDC3B8 /* GLView.m */; };
 		C92ACFDA0F4DFFD100CDC3B8 /* GLModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C92ACFD90F4DFFD100CDC3B8 /* GLModel.m */; };
+		C92E6DFF125CFF88008D4FF1 /* UDPEcho.m in Sources */ = {isa = PBXBuildFile; fileRef = C92E6DFE125CFF88008D4FF1 /* UDPEcho.m */; };
+		C92E6E1B125D01C3008D4FF1 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C92E6E1A125D01C3008D4FF1 /* CFNetwork.framework */; };
 		C941CC140F1359B400738DAF /* Transport.m in Sources */ = {isa = PBXBuildFile; fileRef = C941CC130F1359B400738DAF /* Transport.m */; };
 		C941CC620F13633E00738DAF /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C941CC610F13633E00738DAF /* CoreFoundation.framework */; };
 		C941CD630F13B0C100738DAF /* TouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = C941CD620F13B0C100738DAF /* TouchView.m */; };
@@ -56,6 +58,9 @@
 		C92ACEEE0F4DEB4300CDC3B8 /* GLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLView.m; sourceTree = "<group>"; };
 		C92ACFD80F4DFFD100CDC3B8 /* GLModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLModel.h; sourceTree = "<group>"; };
 		C92ACFD90F4DFFD100CDC3B8 /* GLModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLModel.m; sourceTree = "<group>"; };
+		C92E6DFD125CFF88008D4FF1 /* UDPEcho.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDPEcho.h; sourceTree = "<group>"; };
+		C92E6DFE125CFF88008D4FF1 /* UDPEcho.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDPEcho.m; sourceTree = "<group>"; };
+		C92E6E1A125D01C3008D4FF1 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		C941CC120F1359B400738DAF /* Transport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transport.h; sourceTree = "<group>"; };
 		C941CC130F1359B400738DAF /* Transport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transport.m; sourceTree = "<group>"; };
 		C941CC610F13633E00738DAF /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
@@ -93,6 +98,7 @@
 				C92ACE3D0F4DD67A00CDC3B8 /* OpenGLES.framework in Frameworks */,
 				C92ACE490F4DD69600CDC3B8 /* QuartzCore.framework in Frameworks */,
 				C97CECFC0F6E6C630074AF06 /* MediaPlayer.framework in Frameworks */,
+				C92E6E1B125D01C3008D4FF1 /* CFNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +113,8 @@
 				C958D0640F18F103008E521A /* TouchImage.m */,
 				C9D0037C11F06A6800F1B20A /* AsyncUdpSocket.h */,
 				C9D0037D11F06A6800F1B20A /* AsyncUdpSocket.m */,
+				C92E6DFD125CFF88008D4FF1 /* UDPEcho.h */,
+				C92E6DFE125CFF88008D4FF1 /* UDPEcho.m */,
 				C941CC120F1359B400738DAF /* Transport.h */,
 				C941CC130F1359B400738DAF /* Transport.m */,
 				1D3623240D0F684500981E51 /* FantaStickAppDelegate.h */,
@@ -145,6 +153,7 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				C92E6E1A125D01C3008D4FF1 /* CFNetwork.framework */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -260,6 +269,7 @@
 				C9B2CB770F70E0590071ABBD /* FSCache.m in Sources */,
 				C99D7D7F0F7B667D008B6A4B /* Texture2D.m in Sources */,
 				C9D0037E11F06A6800F1B20A /* AsyncUdpSocket.m in Sources */,
+				C92E6DFF125CFF88008D4FF1 /* UDPEcho.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,7 +348,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = NO;
 				PREBINDING = NO;
-				SDKROOT = iphoneos2.2;
+				SDKROOT = iphoneos3.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "";
 			};
