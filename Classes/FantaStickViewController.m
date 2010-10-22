@@ -108,7 +108,7 @@ int touchOffsetY = 0;
 - (void)transportDone
 {
 	[self hideStartupAnimation];
-	[transport send:@"FantaStick init 2.1"];
+	[transport send:@"FantaStick init 2.2"];
 	// Send our IP over every second until we receive something.
 	NSString *sIP = @"IP ";
 	NSString *sMsg = [sIP stringByAppendingString: transport.myip];

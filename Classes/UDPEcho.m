@@ -207,6 +207,8 @@ static void SocketReadCallback(CFSocketRef s, CFSocketCallBackType type, CFDataR
     // This C routine is called by CFSocket when there's data waiting on our 
     // UDP socket.  It just redirects the call to Objective-C code.
 {
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+
     UDPEcho *       obj;
     
     obj = (UDPEcho *) info;
@@ -222,6 +224,8 @@ static void SocketReadCallback(CFSocketRef s, CFSocketCallBackType type, CFDataR
     assert(data == nil);
     
     [obj _readData];
+	
+	[pool release];
 }
 
 #if UDPECHO_IPV4_ONLY
@@ -613,6 +617,8 @@ static void HostResolveCallback(CFHostRef theHost, CFHostInfoType typeInfo, cons
     // This C routine is called by CFHost when the host resolution is complete. 
     // It just redirects the call to the appropriate Objective-C method.
 {
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	
     UDPEcho *    obj;
     
     obj = (UDPEcho *) info;
@@ -628,6 +634,8 @@ static void HostResolveCallback(CFHostRef theHost, CFHostInfoType typeInfo, cons
     } else {
         [obj _hostResolutionDone];
     }
+	
+	[pool release];
 }
 
 - (void) startConnectedToHostName:(NSString *)hostName port:(NSUInteger)port
