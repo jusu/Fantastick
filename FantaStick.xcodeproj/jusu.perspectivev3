@@ -280,13 +280,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>49</integer>
-									<integer>48</integer>
+									<integer>12</integer>
+									<integer>3</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 277}, {257, 760}}</string>
+							<string>{{0, 0}, {257, 760}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -319,7 +319,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>C9BDE25B102416620017CFEA</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>UDPEcho.m</string>
+								<string>Transport.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -327,11 +327,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>C9BDE25C102416620017CFEA</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>UDPEcho.m</string>
+										<string>Transport.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C97A123E1271FDAD00395B28</string>
+										<string>C9109F2C1274792C007946DD</string>
 										<key>history</key>
 										<array>
 											<string>C9AF41E9111A45CC00874E37</string>
@@ -370,11 +370,11 @@
 											<string>C92E6EB3125D0E7E008D4FF1</string>
 											<string>C92E6EC9125D0F26008D4FF1</string>
 											<string>C92E6EE2125D107B008D4FF1</string>
-											<string>C97A12001271F5DE00395B28</string>
 											<string>C97A12111271F7B900395B28</string>
 											<string>C97A12311271FB8B00395B28</string>
 											<string>C97A12321271FB8B00395B28</string>
-											<string>C97A12331271FB8B00395B28</string>
+											<string>C9109F2A1274792C007946DD</string>
+											<string>C9109F2B1274792C007946DD</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -388,18 +388,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {895, 450}}</string>
+								<string>{{0, 0}, {895, 441}}</string>
 								<key>RubberWindowFrame</key>
 								<string>266 59 1174 819 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>450pt</string>
+							<string>441pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>323pt</string>
+							<string>332pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -413,7 +413,9 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {895, 296}}</string>
+										<string>{{10, 27}, {895, 305}}</string>
+										<key>RubberWindowFrame</key>
+										<string>266 59 1174 819 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -468,8 +470,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {895, 296}}</string>
-										<key>RubberWindowFrame</key>
-										<string>266 59 1174 819 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -497,11 +497,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>C97A11EB1271F23200395B28</string>
+				<string>C9109F2D1274792C007946DD</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>C97A11EC1271F23200395B28</string>
+				<string>C9109F2E1274792C007946DD</string>
 				<string>C9BDE25B102416620017CFEA</string>
-				<string>C97A11ED1271F23200395B28</string>
+				<string>C9109F2F1274792C007946DD</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -690,8 +690,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>C97A12091271F5EB00395B28</string>
-		<string>C97A120B1271F5EB00395B28</string>
 		<string>/Users/jusu/Desktop/Reference/iPhone/Apps/FantaStick/FantaStick.xcodeproj</string>
 	</array>
 	<key>WindowString</key>

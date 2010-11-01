@@ -22,7 +22,7 @@
 			<key>Key</key>
 			<string>hostname</string>
 			<key>DefaultValue</key>
-			<string>mymachine.local</string>
+			<string>fantastick.local</string>
 			<key>IsSecure</key>
 			<false/>
 			<key>KeyboardType</key>

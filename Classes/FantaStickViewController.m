@@ -34,17 +34,10 @@ int touchOffsetY = 0;
 	for(int n=0; n<kFingersMax; n++)
 		fingers[n] = 0;
 
-	// Check for hostname, quit if not yet set
-	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	NSString *sHostname = [defaults stringForKey: @"hostname"];
-	if(sHostname == NULL || [sHostname isEqual: @"mymachine.local"]) { // hostname not set?
-		[self hostnameNotSet];
-	} else {
-		// Initialize transport in background thread - looking up hostname might take a while.
-		// Also keep reading socket in another threads runloop.
-		[NSThread detachNewThreadSelector: @selector(initTransport) toTarget: self withObject: nil];
-		//[self performSelector: @selector(initTransport)];
-	}
+	// Initialize transport in background thread - looking up hostname might take a while.
+	// Also keep reading socket in another threads runloop.
+	[NSThread detachNewThreadSelector: @selector(initTransport) toTarget: self withObject: nil];
+	//[self performSelector: @selector(initTransport)];
 
 	// Get notification of volumechange.
 	volumeEventView = [[[MPVolumeView alloc] initWithFrame:self.view.bounds] autorelease];
@@ -108,7 +101,7 @@ int touchOffsetY = 0;
 - (void)transportDone
 {
 	[self hideStartupAnimation];
-	[transport send:@"FantaStick init 2.2"];
+	[transport send:@"FantaStick init 2.3"];
 	// Send our IP over every second until we receive something.
 	NSString *sIP = @"IP ";
 	NSString *sMsg = [sIP stringByAppendingString: transport.myip];

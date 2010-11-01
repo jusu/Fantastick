@@ -1,3 +1,10 @@
+2.3:
+
+- default hostname to "fantastick.local"
+
+
+
+2.2: new network code
 
 
 1.9: added experimental js features
