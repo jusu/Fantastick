@@ -24,19 +24,19 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {834, 559}}";
 			sepNavSelRange = "{573, 0}";
-			sepNavVisRange = "{211, 781}";
+			sepNavVisRange = "{95, 898}";
 		};
 	};
 	28D7ACF70DDB3853001CB0EB /* FantaStickViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1125, 3367}}";
-			sepNavSelRange = "{3266, 0}";
-			sepNavVisRange = "{2741, 883}";
+			sepNavIntBoundsRect = "{{0, 0}, {1125, 3406}}";
+			sepNavSelRange = "{1103, 0}";
+			sepNavVisRange = "{5852, 825}";
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeArchitecturePreference = armv7;
-		activeBuildConfigurationName = "Distribution AdHoc";
+		activeBuildConfigurationName = Release;
 		activeExecutable = C96E4F4B0FE8DBC2001EFA9C /* FantaStick */;
 		activeSDKPreference = iphoneos3.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* FantaStick */;
@@ -106,34 +106,32 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 310303412;
-			PBXWorkspaceStateSaveDate = 310303412;
+			PBXPerProjectTemplateStateSaveDate = 311022291;
+			PBXWorkspaceStateSaveDate = 311022291;
 		};
 		perUserProjectItems = {
 			C90716A011BAC95D006A11BF = C90716A011BAC95D006A11BF /* PBXBookmark */;
 			C90717C911BAE352006A11BF = C90717C911BAE352006A11BF /* PBXTextBookmark */;
 			C9109F2A1274792C007946DD = C9109F2A1274792C007946DD /* PBXTextBookmark */;
-			C9109F2B1274792C007946DD = C9109F2B1274792C007946DD /* PBXTextBookmark */;
-			C9109F2C1274792C007946DD = C9109F2C1274792C007946DD /* PBXTextBookmark */;
 			C91452C312270448008A5B36 = C91452C312270448008A5B36 /* PBXTextBookmark */;
 			C91452D912270994008A5B36 = C91452D912270994008A5B36 /* PBXTextBookmark */;
 			C91452F01227105D008A5B36 = C91452F01227105D008A5B36 /* PBXTextBookmark */;
-			C91452FA12271185008A5B36 = C91452FA12271185008A5B36 /* PBXTextBookmark */;
 			C92E6E22125D01F0008D4FF1 = C92E6E22125D01F0008D4FF1 /* PBXTextBookmark */;
 			C92E6E27125D01F0008D4FF1 = C92E6E27125D01F0008D4FF1 /* PBXTextBookmark */;
 			C92E6E45125D030F008D4FF1 = C92E6E45125D030F008D4FF1 /* PBXTextBookmark */;
-			C92E6EB3125D0E7E008D4FF1 = C92E6EB3125D0E7E008D4FF1 /* PBXTextBookmark */;
 			C92E6EC9125D0F26008D4FF1 = C92E6EC9125D0F26008D4FF1 /* PBXTextBookmark */;
 			C92E6EE2125D107B008D4FF1 = C92E6EE2125D107B008D4FF1 /* PBXTextBookmark */;
-			C95666AD120F340600D78041 = C95666AD120F340600D78041 /* PlistBookmark */;
 			C95D01C71217046E000374F1 = C95D01C71217046E000374F1 /* PBXTextBookmark */;
 			C9611B5A121C36B10006BAFB = C9611B5A121C36B10006BAFB /* PBXTextBookmark */;
 			C9611B9B121C3B420006BAFB = C9611B9B121C3B420006BAFB /* PBXTextBookmark */;
 			C9611BB0121C3BAE0006BAFB = C9611BB0121C3BAE0006BAFB /* PBXBookmark */;
 			C9611BB1121C3BAE0006BAFB = C9611BB1121C3BAE0006BAFB /* PBXBookmark */;
+			C977898B1289D53400F6C69A /* PlistBookmark */ = C977898B1289D53400F6C69A /* PlistBookmark */;
+			C977898C1289D53400F6C69A /* PBXTextBookmark */ = C977898C1289D53400F6C69A /* PBXTextBookmark */;
+			C977898D1289D53400F6C69A /* PBXTextBookmark */ = C977898D1289D53400F6C69A /* PBXTextBookmark */;
+			C977898E1289D53400F6C69A /* PBXTextBookmark */ = C977898E1289D53400F6C69A /* PBXTextBookmark */;
+			C977898F1289D53900F6C69A /* PBXTextBookmark */ = C977898F1289D53900F6C69A /* PBXTextBookmark */;
 			C97A12111271F7B900395B28 = C97A12111271F7B900395B28 /* PBXTextBookmark */;
-			C97A12311271FB8B00395B28 = C97A12311271FB8B00395B28 /* PBXTextBookmark */;
-			C97A12321271FB8B00395B28 = C97A12321271FB8B00395B28 /* PlistBookmark */;
 			C97C5C41125B711000E6AC67 = C97C5C41125B711000E6AC67 /* PBXTextBookmark */;
 			C990AEE311B581A60084BF3E = C990AEE311B581A60084BF3E /* PBXTextBookmark */;
 			C9A09BD6124E966700E75EE1 = C9A09BD6124E966700E75EE1 /* PBXTextBookmark */;
@@ -150,8 +148,15 @@
 			C9AF41EF111A45CC00874E37 = C9AF41EF111A45CC00874E37 /* PBXTextBookmark */;
 			C9AF41F0111A45CC00874E37 = C9AF41F0111A45CC00874E37 /* PBXTextBookmark */;
 			C9AF4217111A4C6200874E37 = C9AF4217111A4C6200874E37 /* PBXTextBookmark */;
+			C9B1042B1289A0BC00F108F5 = C9B1042B1289A0BC00F108F5 /* PBXTextBookmark */;
+			C9B1042C1289A0BC00F108F5 = C9B1042C1289A0BC00F108F5 /* PlistBookmark */;
 			C9D0035C11F057EB00F1B20A = C9D0035C11F057EB00F1B20A /* PBXTextBookmark */;
 			C9D0035F11F057EB00F1B20A = C9D0035F11F057EB00F1B20A /* PBXTextBookmark */;
+			C9D6829112841DF400F565E4 = C9D6829112841DF400F565E4 /* PBXTextBookmark */;
+			C9D6829212841DF400F565E4 = C9D6829212841DF400F565E4 /* PBXTextBookmark */;
+			C9D6829312841DF400F565E4 = C9D6829312841DF400F565E4 /* PlistBookmark */;
+			C9D6829412841DF400F565E4 = C9D6829412841DF400F565E4 /* PlistBookmark */;
+			C9D6829512841DF400F565E4 = C9D6829512841DF400F565E4 /* PBXTextBookmark */;
 		};
 		sourceControlManager = C96E4F580FE8DBD0001EFA9C /* Source Control */;
 		userBuildSettings = {
@@ -180,26 +185,6 @@
 		rType = 0;
 		vrLen = 1126;
 		vrLoc = 6652;
-	};
-	C9109F2B1274792C007946DD /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C941CC130F1359B400738DAF /* Transport.m */;
-		name = "Transport.m: 106";
-		rLen = 13;
-		rLoc = 2144;
-		rType = 0;
-		vrLen = 667;
-		vrLoc = 1714;
-	};
-	C9109F2C1274792C007946DD /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C941CC130F1359B400738DAF /* Transport.m */;
-		name = "Transport.m: 106";
-		rLen = 13;
-		rLoc = 2144;
-		rType = 0;
-		vrLen = 666;
-		vrLoc = 1714;
 	};
 	C91452C312270448008A5B36 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -238,16 +223,6 @@
 		vrLen = 660;
 		vrLoc = 0;
 	};
-	C91452FA12271185008A5B36 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C94779370F3DE53A001B9FEB /* changes.txt */;
-		name = "changes.txt: 5";
-		rLen = 0;
-		rLoc = 71;
-		rType = 0;
-		vrLen = 756;
-		vrLoc = 0;
-	};
 	C92ACEED0F4DEB4300CDC3B8 /* GLView.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {834, 754}}";
@@ -272,9 +247,9 @@
 	};
 	C92ACFD90F4DFFD100CDC3B8 /* GLModel.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {834, 6019}}";
+			sepNavIntBoundsRect = "{{0, 0}, {880, 5642}}";
 			sepNavSelRange = "{7464, 0}";
-			sepNavVisRange = "{6939, 1076}";
+			sepNavVisRange = "{3060, 1358}";
 			sepNavWindowFrame = "{{15, 4}, {1043, 874}}";
 		};
 	};
@@ -328,16 +303,11 @@
 		name = GLView.m;
 		path = /Users/jusu/Desktop/Reference/iPhone/Apps/FantaStick/Classes/GLView.m;
 		sourceTree = "<absolute>";
-	};
-	C92E6EB3125D0E7E008D4FF1 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 28D7ACF60DDB3853001CB0EB /* FantaStickViewController.h */;
-		name = "FantaStickViewController.h: 27";
-		rLen = 0;
-		rLoc = 573;
-		rType = 0;
-		vrLen = 841;
-		vrLoc = 151;
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {834, 7657}}";
+			sepNavSelRange = "{10666, 0}";
+			sepNavVisRange = "{10046, 917}";
+		};
 	};
 	C92E6EC9125D0F26008D4FF1 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -425,9 +395,9 @@
 	};
 	C94779370F3DE53A001B9FEB /* changes.txt */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {834, 546}}";
-			sepNavSelRange = "{71, 0}";
-			sepNavVisRange = "{0, 756}";
+			sepNavIntBoundsRect = "{{0, 0}, {834, 715}}";
+			sepNavSelRange = "{47, 0}";
+			sepNavVisRange = "{0, 317}";
 		};
 	};
 	C956665E120F30EC00D78041 /* Root.plist */ = {
@@ -436,17 +406,6 @@
 		name = Root.plist;
 		path = /Users/jusu/Desktop/Reference/iPhone/Apps/FantaStick/Settings.bundle/Root.plist;
 		sourceTree = "<absolute>";
-	};
-	C95666AD120F340600D78041 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = C956665E120F30EC00D78041 /* Root.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = /Users/jusu/Desktop/Reference/iPhone/Apps/FantaStick/Settings.bundle/Root.plist;
-		rLen = 0;
-		rLoc = 9223372036854775808;
 	};
 	C958D0640F18F103008E521A /* TouchImage.m */ = {
 		uiCtxt = {
@@ -539,6 +498,58 @@
 		isa = PBXCodeSenseManager;
 		indexTemplatePath = "";
 	};
+	C977898B1289D53400F6C69A /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleVersion,
+		);
+		name = /Users/jusu/Desktop/Reference/iPhone/Apps/FantaStick/Info.plist;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	C977898C1289D53400F6C69A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C92ACFD90F4DFFD100CDC3B8 /* GLModel.m */;
+		name = "GLModel.m: 334";
+		rLen = 0;
+		rLoc = 7464;
+		rType = 0;
+		vrLen = 1358;
+		vrLoc = 3060;
+	};
+	C977898D1289D53400F6C69A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C92E6E97125D0BC5008D4FF1 /* GLView.m */;
+		name = "GLView.m: 316";
+		rLen = 14;
+		rLoc = 8522;
+		rType = 0;
+		vrLen = 811;
+		vrLoc = 8334;
+	};
+	C977898E1289D53400F6C69A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C92E6E97125D0BC5008D4FF1 /* GLView.m */;
+		name = "GLView.m: 422";
+		rLen = 0;
+		rLoc = 10666;
+		rType = 0;
+		vrLen = 917;
+		vrLoc = 10046;
+	};
+	C977898F1289D53900F6C69A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C92E6E97125D0BC5008D4FF1 /* GLView.m */;
+		name = "GLView.m: 422";
+		rLen = 0;
+		rLoc = 10666;
+		rType = 0;
+		vrLen = 917;
+		vrLoc = 10046;
+	};
 	C97A12111271F7B900395B28 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = C92E6E97125D0BC5008D4FF1 /* GLView.m */;
@@ -548,28 +559,6 @@
 		rType = 0;
 		vrLen = 659;
 		vrLoc = 9955;
-	};
-	C97A12311271FB8B00395B28 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 28D7ACF70DDB3853001CB0EB /* FantaStickViewController.m */;
-		name = "FantaStickViewController.m: 111";
-		rLen = 0;
-		rLoc = 3266;
-		rType = 0;
-		vrLen = 850;
-		vrLoc = 2866;
-	};
-	C97A12321271FB8B00395B28 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-			LSRequiresIPhoneOS,
-		);
-		name = /Users/jusu/Desktop/Reference/iPhone/Apps/FantaStick/Info.plist;
-		rLen = 0;
-		rLoc = 9223372036854775808;
 	};
 	C97C5C41125B711000E6AC67 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -881,6 +870,28 @@
 		vrLen = 1656;
 		vrLoc = 0;
 	};
+	C9B1042B1289A0BC00F108F5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF60DDB3853001CB0EB /* FantaStickViewController.h */;
+		name = "FantaStickViewController.h: 27";
+		rLen = 0;
+		rLoc = 573;
+		rType = 0;
+		vrLen = 898;
+		vrLoc = 95;
+	};
+	C9B1042C1289A0BC00F108F5 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleVersion,
+		);
+		name = /Users/jusu/Desktop/Reference/iPhone/Apps/FantaStick/Info.plist;
+		rLen = 0;
+		rLoc = 9223372036854775808;
+	};
 	C9B2CB760F70E0590071ABBD /* FSCache.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {838, 1560}}";
@@ -928,5 +939,60 @@
 			sepNavSelRange = "{66347, 0}";
 			sepNavVisRange = "{1375, 1288}";
 		};
+	};
+	C9D6829112841DF400F565E4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C941CC130F1359B400738DAF /* Transport.m */;
+		name = "Transport.m: 106";
+		rLen = 13;
+		rLoc = 2144;
+		rType = 0;
+		vrLen = 705;
+		vrLoc = 1740;
+	};
+	C9D6829212841DF400F565E4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94779370F3DE53A001B9FEB /* changes.txt */;
+		name = "changes.txt: 4";
+		rLen = 0;
+		rLoc = 47;
+		rType = 0;
+		vrLen = 317;
+		vrLoc = 0;
+	};
+	C9D6829312841DF400F565E4 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = C956665E120F30EC00D78041 /* Root.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			PreferenceSpecifiers,
+			1,
+		);
+		name = /Users/jusu/Desktop/Reference/iPhone/Apps/FantaStick/Settings.bundle/Root.plist;
+		rLen = 0;
+		rLoc = 9223372036854775808;
+	};
+	C9D6829412841DF400F565E4 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleVersion,
+		);
+		name = /Users/jusu/Desktop/Reference/iPhone/Apps/FantaStick/Info.plist;
+		rLen = 0;
+		rLoc = 9223372036854775808;
+	};
+	C9D6829512841DF400F565E4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* FantaStickViewController.m */;
+		name = "FantaStickViewController.m: 40";
+		rLen = 0;
+		rLoc = 1103;
+		rType = 0;
+		vrLen = 825;
+		vrLoc = 5852;
 	};
 }

@@ -407,6 +407,24 @@ char buffer[BUFFERMAXLEN+4];
 		[s release];
 	} else
 	// CLEAR
+	if(strncmp(cmd, "clear ", 6) == 0) {
+		cmd += 6;
+		
+		// Model already created?
+		NSString *s = [[NSString alloc] initWithCString: cmd];
+		GLModel *m = 0;
+		@synchronized(models) {
+			@synchronized(models_clearqueue) {
+				m = [models objectForKey: s];
+				if(m) {
+					[models_clearqueue setObject: m forKey: s];
+					[models removeObjectForKey: s];
+					clearRequested = YES;
+				}
+			}
+		}
+		[s release];
+	} else
 	if(strncmp(cmd, "clearmodels", 11) == 0) {
 		@synchronized(models) {
 			@synchronized(models_clearqueue) {
