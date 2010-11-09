@@ -31,11 +31,17 @@ GLfloat squareTextures[] = {
 static float cameraX = 0.0f;
 static float cameraY = 0.0f;
 
+static float cameraRotate[4];
+
 @implementation GLModel
 
 - (id)initWithBytes: (char*)a
 {
 	[super init];
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 30200
+	idiom = UI_USER_INTERFACE_IDIOM();
+#endif
 
 	color[0] = 1.0f;
 	color[1] = 1.0f;
@@ -345,26 +351,37 @@ static float cameraY = 0.0f;
 	glLoadIdentity();
 
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 30200
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+    if (idiom == UIUserInterfaceIdiomPad) {
 		// Running on iPad, get to 768x1024
-		glTranslatef(-384.0f, 512.0f, -747.1f); // magic number
+		glTranslatef(-384.0f, 512.0f, -747.1f); // magic numbers
 		glRotatef(0.0, 0.0, 0.0, 1.0);
 		glScalef(1.0f, -1.001f, 1.0f);
 	} else {
 		// Running on iPhone/iPod, get to 320x480
-		glTranslatef(-160.0f, 240.0f, -312.0f); // magic number
+		glTranslatef(-160.0f, 240.0f, -312.0f); // magic numbers
 		glRotatef(0.0, 0.0, 0.0, 1.0);
 		glScalef(1.0f, -1.001f, 1.0f);
 	}
 #else
 	// Running on iPhone/iPod, get to 320x480
-	glTranslatef(-160.0f, 240.0f, -312.0f); // magic number
+	glTranslatef(-160.0f, 240.0f, -312.0f); // magic numbers
 	glRotatef(0.0, 0.0, 0.0, 1.0);
 	glScalef(1.0f, -1.001f, 1.0f);
 #endif
 
 	// translate with global camera offset, for scrolling
 	glTranslatef(cameraX, cameraY, 0.0f);
+	
+	// FIXME: if landscape is 1 / left
+	// glTranslatef(-320.0f, -10.0f, 0.0f);
+	// glRotate(90.0f, 0.0f, 0.0f, 1.0f);
+	
+	// FIXME: if landscape is 2 / right
+	// glTranslatef(0.0f, -480.0f, 0.0f);
+	// glRotate(270.0f, 0.0f, 0.0f, 1.0f);
+
+	// rotate with global xyz, for orientation
+	glRotatef(cameraRotate[0], cameraRotate[1], cameraRotate[2], cameraRotate[3]);		
 
 	glLineWidth(lineWidth);
 	
@@ -426,6 +443,14 @@ static float cameraY = 0.0f;
 {
 	cameraX = x;
 	cameraY = y;
+}
+
++ (void) setRotate: (float[4])rot
+{
+	cameraRotate[0] = rot[0];
+	cameraRotate[1] = rot[1];
+	cameraRotate[2] = rot[2];
+	cameraRotate[3] = rot[3];
 }
 
 - (void) dealloc

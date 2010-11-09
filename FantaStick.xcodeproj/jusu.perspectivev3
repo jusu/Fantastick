@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>ActivePerspectiveName</key>
-	<string>Debug</string>
+	<string>Project</string>
 	<key>AllowedModules</key>
 	<array>
 		<dict>
@@ -279,7 +279,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>22</integer>
+									<integer>19</integer>
 									<integer>5</integer>
 									<integer>0</integer>
 								</array>
@@ -301,6 +301,8 @@
 							<string>MainColumn</string>
 							<real>257</real>
 						</array>
+						<key>RubberWindowFrame</key>
+						<string>266 59 1174 819 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -311,6 +313,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -328,7 +332,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C977898F1289D53900F6C69A</string>
+										<string>C97789FA1289EF0F00F6C69A</string>
 										<key>history</key>
 										<array>
 											<string>C9AF41E9111A45CC00874E37</string>
@@ -341,7 +345,6 @@
 											<string>C9AF4217111A4C6200874E37</string>
 											<string>C990AEE311B581A60084BF3E</string>
 											<string>C90716A011BAC95D006A11BF</string>
-											<string>C90717C911BAE352006A11BF</string>
 											<string>C9D0035C11F057EB00F1B20A</string>
 											<string>C9D0035F11F057EB00F1B20A</string>
 											<string>C9A7B9B611F07E6A0035271A</string>
@@ -354,24 +357,24 @@
 											<string>C9611BB0121C3BAE0006BAFB</string>
 											<string>C9611BB1121C3BAE0006BAFB</string>
 											<string>C91452C312270448008A5B36</string>
-											<string>C91452D912270994008A5B36</string>
 											<string>C91452F01227105D008A5B36</string>
 											<string>C9A09BD6124E966700E75EE1</string>
-											<string>C97C5C41125B711000E6AC67</string>
-											<string>C92E6E22125D01F0008D4FF1</string>
-											<string>C92E6E27125D01F0008D4FF1</string>
 											<string>C92E6E45125D030F008D4FF1</string>
 											<string>C92E6EC9125D0F26008D4FF1</string>
 											<string>C92E6EE2125D107B008D4FF1</string>
 											<string>C9109F2A1274792C007946DD</string>
 											<string>C9D6829112841DF400F565E4</string>
-											<string>C9D6829212841DF400F565E4</string>
-											<string>C9D6829312841DF400F565E4</string>
-											<string>C9D6829512841DF400F565E4</string>
-											<string>C9B1042B1289A0BC00F108F5</string>
-											<string>C977898B1289D53400F6C69A</string>
-											<string>C977898C1289D53400F6C69A</string>
-											<string>C977898D1289D53400F6C69A</string>
+											<string>C97789AD1289DAE100F6C69A</string>
+											<string>C97789AE1289DAE100F6C69A</string>
+											<string>C97789EE1289EE8600F6C69A</string>
+											<string>C97789EF1289EE8600F6C69A</string>
+											<string>C97789F01289EE8600F6C69A</string>
+											<string>C97789F11289EE8600F6C69A</string>
+											<string>C97789F21289EE8600F6C69A</string>
+											<string>C97789F41289EE8600F6C69A</string>
+											<string>C97789F51289EE8600F6C69A</string>
+											<string>C97789F81289EF0F00F6C69A</string>
+											<string>C97789F91289EF0F00F6C69A</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -386,6 +389,8 @@
 							<dict>
 								<key>Frame</key>
 								<string>{{0, 0}, {895, 550}}</string>
+								<key>RubberWindowFrame</key>
+								<string>266 59 1174 819 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -463,6 +468,8 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {895, 196}}</string>
+										<key>RubberWindowFrame</key>
+										<string>266 59 1174 819 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -536,8 +543,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
@@ -549,8 +554,6 @@
 					<dict>
 						<key>Frame</key>
 						<string>{{0, 0}, {1174, 202}}</string>
-						<key>RubberWindowFrame</key>
-						<string>266 59 1174 819 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugCLIModule</string>
@@ -625,11 +628,7 @@
 							</array>
 							<key>Frame</key>
 							<string>{{573, 0}, {601, 280}}</string>
-							<key>RubberWindowFrame</key>
-							<string>266 59 1174 819 0 0 1440 878 </string>
 						</dict>
-						<key>RubberWindowFrame</key>
-						<string>266 59 1174 819 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugSessionModule</string>
@@ -691,7 +690,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>C97789981289D53900F6C69A</string>
+		<string>C97789A11289D77E00F6C69A</string>
 		<string>C97789991289D53900F6C69A</string>
 		<string>/Users/jusu/Desktop/Reference/iPhone/Apps/FantaStick/FantaStick.xcodeproj</string>
 	</array>

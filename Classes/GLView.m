@@ -11,7 +11,6 @@
 #import "GLView.h"
 #import "GLModel.h"
 #import "FSCache.h"
-#import "FSBlockInfo.h"
 #import "Transport.h"
 #import "FantaStickViewController.h"
 
@@ -505,6 +504,21 @@ char buffer[BUFFERMAXLEN+4];
 		}
 		[GLModel setCamera: -cam[0] Y: -cam[1]];
 	} else
+	if(strncmp(cmd, "rotate ", 7) == 0) {
+		cmd += 7;
+		if(!cmd)
+			return;
+		int i=0;
+		float rot[4];
+		rot[0] = 0.0f;
+		rot[1] = 0.0f;
+		rot[2] = 0.0f;
+		rot[3] = 0.0f;
+		for(cmd = strtok(cmd, " "); i<4 && cmd; i++, cmd = strtok(NULL, " ")) {
+			rot[i] = atof(cmd);
+		}
+		[GLModel setRotate: rot];
+	} else
 	if(strncmp(cmd, "offset ", 7) == 0) {
 		cmd += 7;
 		if(!cmd)
@@ -517,8 +531,16 @@ char buffer[BUFFERMAXLEN+4];
 			offset[i] = atoi(cmd);
 		}
 		[FantaStickViewController setTouchOffset: offset[0] Y: offset[1]];
+	} else
+	if(strncmp(cmd, "landscape 0", 11) == 0) {
+		// FIXME: set 'global' landscape flag to add extra camera translation to match models, and fix touch input
+	} else
+	if(strncmp(cmd, "landscape 1", 11) == 0) {
+		// FIXME: set 'global' landscape flag to add extra camera translation to match models, and fix touch input
+	} else
+	if(strncmp(cmd, "landscape 2", 11) == 0) {
+		// FIXME: set 'global' landscape flag to add extra camera translation to match models, and fix touch input
 	}
-	
 }
 
 - (void)dealloc {

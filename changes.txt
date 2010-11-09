@@ -1,7 +1,8 @@
 2.3:
 
-- default hostname to "fantastick.local"
-
+- default hostname to "art.local"
+- added 'clear modelname' command
+- added 'landscape 0/1/2' command // FIXME: unfinished
 
 
 2.2: new network code

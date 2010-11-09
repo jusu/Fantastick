@@ -32,7 +32,6 @@
 		C980564B11BAC5C400B58528 /* FantaStickViewController-ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9D6E4C51110EA4C00B9D40F /* FantaStickViewController-ipad.xib */; };
 		C99D7D7F0F7B667D008B6A4B /* Texture2D.m in Sources */ = {isa = PBXBuildFile; fileRef = C99D7D7E0F7B667D008B6A4B /* Texture2D.m */; };
 		C9B2CB770F70E0590071ABBD /* FSCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B2CB760F70E0590071ABBD /* FSCache.m */; };
-		C9D0037E11F06A6800F1B20A /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D0037D11F06A6800F1B20A /* AsyncUdpSocket.m */; };
 		C9EFDEC811BEAA8F0084EB99 /* icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = C9EFDEC711BEAA8F0084EB99 /* icon-72.png */; };
 		C9EFDEE211BEAC830084EB99 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9EFDEE111BEAC830084EB99 /* Entitlements.plist */; };
 		C9FEE1170F162D150055F151 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C9FEE1160F162D150055F151 /* Settings.bundle */; };
@@ -74,11 +73,8 @@
 		C97CECFB0F6E6C630074AF06 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		C99D7D7D0F7B667D008B6A4B /* Texture2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture2D.h; sourceTree = "<group>"; };
 		C99D7D7E0F7B667D008B6A4B /* Texture2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Texture2D.m; sourceTree = "<group>"; };
-		C9AF40EB111A2D3E00874E37 /* FSBlockInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSBlockInfo.h; sourceTree = "<group>"; };
 		C9B2CB750F70E0590071ABBD /* FSCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCache.h; sourceTree = "<group>"; };
 		C9B2CB760F70E0590071ABBD /* FSCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCache.m; sourceTree = "<group>"; };
-		C9D0037C11F06A6800F1B20A /* AsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncUdpSocket.h; sourceTree = "<group>"; };
-		C9D0037D11F06A6800F1B20A /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
 		C9D6E4C41110EA4C00B9D40F /* MainWindow-ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-ipad.xib"; path = "Resources-iPad/MainWindow-ipad.xib"; sourceTree = "<group>"; };
 		C9D6E4C51110EA4C00B9D40F /* FantaStickViewController-ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "FantaStickViewController-ipad.xib"; path = "Resources-iPad/FantaStickViewController-ipad.xib"; sourceTree = "<group>"; };
 		C9EFDEC711BEAA8F0084EB99 /* icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-72.png"; sourceTree = "<group>"; };
@@ -108,11 +104,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				C9AF40EB111A2D3E00874E37 /* FSBlockInfo.h */,
 				C958D0630F18F103008E521A /* TouchImage.h */,
 				C958D0640F18F103008E521A /* TouchImage.m */,
-				C9D0037C11F06A6800F1B20A /* AsyncUdpSocket.h */,
-				C9D0037D11F06A6800F1B20A /* AsyncUdpSocket.m */,
 				C92E6DFD125CFF88008D4FF1 /* UDPEcho.h */,
 				C92E6DFE125CFF88008D4FF1 /* UDPEcho.m */,
 				C941CC120F1359B400738DAF /* Transport.h */,
@@ -268,7 +261,6 @@
 				C92ACFDA0F4DFFD100CDC3B8 /* GLModel.m in Sources */,
 				C9B2CB770F70E0590071ABBD /* FSCache.m in Sources */,
 				C99D7D7F0F7B667D008B6A4B /* Texture2D.m in Sources */,
-				C9D0037E11F06A6800F1B20A /* AsyncUdpSocket.m in Sources */,
 				C92E6DFF125CFF88008D4FF1 /* UDPEcho.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

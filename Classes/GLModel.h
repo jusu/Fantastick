@@ -13,7 +13,6 @@
 #import <UIKit/UIDevice.h>
 #import "TouchImage.h"
 #import "Texture2D.h"
-#import "FSBlockInfo.h"
 
 @interface GLModel : NSObject {
 	GLfloat color[4];
@@ -44,6 +43,8 @@
 
 	long vertexCount;
 	float *vertexArray;
+	
+	UIUserInterfaceIdiom idiom;
 }
 
 @property (nonatomic, readonly) BOOL isOpaque;
@@ -53,7 +54,8 @@
 - (void)draw;
 - (void)clear;
 
-// Set global camera offset
+// Set global camera offset/rotate
 + (void) setCamera: (float)x Y: (float)y;
++ (void) setRotate: (float[4])rot;
 
 @end
