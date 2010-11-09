@@ -2,7 +2,9 @@
 
 - default hostname to "art.local"
 - added 'clear modelname' command
-- added 'landscape 0/1/2' command // FIXME: unfinished
+- added 'landscape 0/1/2' command
+	FIXME: unfinished - has global rotate but inconvenient - screen vs. touch is off,
+	and touch data needs to be rotated as well.
 
 
 2.2: new network code
