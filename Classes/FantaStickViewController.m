@@ -27,6 +27,19 @@ int touchOffsetY = 0;
 }
 */
 
+void rot13(char *str)
+{
+	int len = strlen(str);
+	char byte, cap;
+	for (int i=0; i<len; i++) {
+		byte = str[i];
+		cap = byte & 32;
+		byte &= ~cap;
+		byte = ((byte >= 'A') && (byte <= 'Z') ? ((byte - 'A' + 13) % 26 + 'A') : byte) | cap;
+		str[i] = byte;
+	}
+}
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -43,6 +56,12 @@ int touchOffsetY = 0;
 	volumeEventView = [[[MPVolumeView alloc] initWithFrame:self.view.bounds] autorelease];
 	[[NSNotificationCenter defaultCenter] addObserver:self
      selector:@selector(volumeChanged:) name:@"AVSystemController_SystemVolumeDidChangeNotification" object:nil];
+
+	char *appleLoveStr = "cnguZnwbeEnqvhf";
+	char str[strlen(appleLoveStr)+1];
+	strcpy(str, appleLoveStr);
+	rot13(str);
+	appleLove1 = [[NSString alloc] initWithFormat: @"%s", str];
 }
 
 - (void) volumeChanged: (NSNotification *)notify
@@ -175,15 +194,19 @@ int touchOffsetY = 0;
 				prefix = 'S';
 		}
 
-		NSString *str = [[NSString alloc] initWithFormat: @"%c %ld %ld %ld", prefix,
+		id fv = [touch valueForKey: appleLove1];
+		CGFloat radius = fv ? [fv floatValue] : 0.0f;
+
+		NSString *str = [[NSString alloc] initWithFormat: @"%c %ld %ld %ld %f", prefix,
 						 a = touchOffsetX + lrintf(loc.x),
 						 b = touchOffsetY + lrintf(loc.y),
-						 nID + 1];
+						 nID + 1,
+						 radius];
 		[transport send: str];
 		[str release];
 		
 		if([glview jsActive]) {
-			[glview touch: prefix x: a y: b num: nID + 1];
+			[glview touch: prefix x: a y: b num: nID + 1 radius: radius];
 		}
 	}
 
@@ -251,6 +274,7 @@ int touchOffsetY = 0;
 - (void)dealloc {
 	[transport release];
 	[ipTimer release];
+	[appleLove1 release];
 
     [super dealloc];
 }

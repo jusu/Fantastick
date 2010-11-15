@@ -20,6 +20,7 @@
 	MPVolumeView *volumeEventView;
 
 	UInt32 fingers[kFingersMax];			// fingertracking
+	NSString *appleLove1;
 }
 
 - (void)hostnameNotSet;

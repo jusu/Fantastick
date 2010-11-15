@@ -49,7 +49,7 @@
 -(void)drawGLView;
 -(void)handleMessage: (id)msg;
 -(BOOL)jsActive;
--(void)touch: (char)type x: (int)xpos y: (int)ypos num: (int)finger;
+-(void)touch: (char)type x: (int)xpos y: (int)ypos num: (int)finger radius: (float)rad;
 -(void)accelxacc: (double)x yacc: (double)y zacc: (double)z;
 @property (nonatomic, retain) id controller;
 @property (nonatomic, retain) id TouchView;

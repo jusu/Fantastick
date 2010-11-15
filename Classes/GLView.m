@@ -242,9 +242,9 @@ kSquareX,   kSquareY
 	[web stringByEvaluatingJavaScriptFromString: s];
 }
 
--(void)touch: (char) type x: (int) xpos y: (int) ypos num: (int) finger
+-(void)touch: (char) type x: (int) xpos y: (int) ypos num: (int) finger radius: (float) rad
 {
-	NSString *s = [NSString stringWithFormat: @"touch('%c', %d, %d, %d);", type, xpos, ypos, finger];
+	NSString *s = [NSString stringWithFormat: @"touch('%c', %d, %d, %d, %f);", type, xpos, ypos, finger, rad];
 	[self doJS: s];
 }
 
