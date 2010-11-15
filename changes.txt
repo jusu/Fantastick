@@ -1,5 +1,6 @@
 2.3:
 
+- added pathradius to fingerdata
 - default hostname to "art.local"
 - added 'clear modelname' command
 - added 'landscape 0/1/2' command
