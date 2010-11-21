@@ -31,7 +31,6 @@
 	GLubyte			*imageData;
 	size_t			imagewidth, imageheight;
 	BOOL			isTextured;
-	BOOL			shouldUploadTexture; // should upload tx on next draw
 
 	// Text object
 	Texture2D		*text2d;

@@ -18,6 +18,8 @@
 // How many times a second to refresh the screen
 #define kRenderingFrequency 50.0
 
+typedef enum { portrait, left, right } orientation;
+
 @interface GLView : UIView {
 	id controller;
 	id TouchView;
@@ -53,5 +55,7 @@
 -(void)accelxacc: (double)x yacc: (double)y zacc: (double)z;
 @property (nonatomic, retain) id controller;
 @property (nonatomic, retain) id TouchView;
+
++ (orientation) orientation;
 
 @end

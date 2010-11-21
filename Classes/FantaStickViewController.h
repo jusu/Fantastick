@@ -21,6 +21,8 @@
 
 	UInt32 fingers[kFingersMax];			// fingertracking
 	NSString *appleLove1;
+	
+	UIUserInterfaceIdiom idiom;
 }
 
 - (void)hostnameNotSet;
@@ -36,6 +38,7 @@
 - (void)hideStartupAnimation;
 
 + (void) setTouchOffset: (int)x Y: (int)y;
++ (void) setAreaData: (BOOL) b;
 
 @property (nonatomic, retain) id glview;
 

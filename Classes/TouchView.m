@@ -10,6 +10,7 @@
 #import <OpenGLES/EAGLDrawable.h>
 #import "TouchView.h"
 #import "TouchImage.h"
+#import "FantaStickViewController.h"
 
 #define RADIANS( degrees ) ( degrees * M_PI / 180 )
 
@@ -304,6 +305,16 @@ void swapf(float *a, float *b)
 				[self stopAnimation];
 				[GLView activate];
 			}
+		}
+		
+		if (count == 2 && [cmd isEqualToString: @"area"]) {
+			int state = [[i objectAtIndex: 1] intValue];
+			if (state == 0) {
+				[FantaStickViewController setAreaData: NO];
+			} else if (state == 1) {
+				[FantaStickViewController setAreaData: YES];
+			}
+			continue;
 		}
 		
 	} while(false);

@@ -9,6 +9,7 @@
 #import <UIKit/UIDevice.h>
 #import "GLModel.h"
 #import "FSCache.h"
+#import "GLView.h"
 
 GLfloat squareTextures[] = {
 	-0.0f, 0.0f,
@@ -24,7 +25,6 @@ GLfloat squareTextures[] = {
 @interface GLModel (private)
 
 - (void) updateTextString;
-- (void) uploadBlockTexture;
 
 @end
 
@@ -73,7 +73,6 @@ static float cameraRotate[4];
 	imageData = NULL;
 	imagewidth = imageheight = 0;
 	isTextured = NO;
-	shouldUploadTexture = NO;
 	
 	text2d = NULL;
 	textString = NULL;
@@ -287,31 +286,6 @@ static float cameraRotate[4];
 	}
 }
 
-- (void) uploadBlockTexture
-{
-	if(!imageData) {
-		shouldUploadTexture = NO;
-		return;
-	}
-
-	glDeleteTextures(1, &imageTexture);
-	glGenTextures(1, &imageTexture);
-	glBindTexture(GL_TEXTURE_2D, imageTexture);
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, imagewidth, imageheight, 0, GL_RGBA, GL_UNSIGNED_BYTE, imageData);		
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-
-	position[0] = 256;
-	position[1] = 256;
-//swap	position[1] = bi->imageheight - bi->blocktop - (bi->blockheight / 2);
-	isPositionSet = YES;
-
-	// Set alpha just below 1.0 to draw as not-opaque
-	color[3] = 0.999999f;
-
-	isTextured = YES;
-	shouldUploadTexture = NO;
-}
-
 - (void) updateTextString
 {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
@@ -339,48 +313,62 @@ static float cameraRotate[4];
 	return color[3] >= 1.0f;
 }
 
+- (void) setupiPhone
+{
+	orientation o = [GLView orientation];
+	if (o == left) {
+		glRotatef(270.0f, 0.0f, 0.0f, 1.0f);
+		glTranslatef(-80.0f, -80.0f, 0.0f);
+	} else if (o == right) {
+		glRotatef(90.0f, 0.0f, 0.0f, 1.0f);
+		glTranslatef(-80.0f, -80.0f, 0.0f);
+	}
+	
+	// go 1:1 screen mapping with magic numbers
+	glTranslatef(-160.0f, 240.0f, -312.0f);
+	glRotatef(0.0, 0.0, 0.0, 1.0);
+	glScalef(1.0f, -1.001f, 1.0f);
+}
+
+- (void) setupiPad
+{
+	orientation o = [GLView orientation];
+	if (o == left) {
+		glRotatef(270.0f, 0.0f, 0.0f, 1.0f);
+		glTranslatef(-130.0f, -130.0f, 0.0f);
+	} else if (o == right) {
+		glRotatef(90.0f, 0.0f, 0.0f, 1.0f);
+		glTranslatef(-130.0f, -130.0f, 0.0f);
+	}
+	
+	// go 1:1 screen mapping with magic numbers
+	glTranslatef(-384.0f, 512.0f, -747.1f);
+	glRotatef(0.0, 0.0, 0.0, 1.0);
+	glScalef(1.0f, -1.001f, 1.0f);
+}
+
 - (void)draw
 {
 	if(!text2d && (!vertexCount || !vertexArray))
 		return;
 
-	if(shouldUploadTexture && imageData) {
-		[self uploadBlockTexture];
-	}
-
 	glLoadIdentity();
-
+	
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 30200
     if (idiom == UIUserInterfaceIdiomPad) {
-		// Running on iPad, get to 768x1024
-		glTranslatef(-384.0f, 512.0f, -747.1f); // magic numbers
-		glRotatef(0.0, 0.0, 0.0, 1.0);
-		glScalef(1.0f, -1.001f, 1.0f);
+		[self setupiPad];
 	} else {
 		// Running on iPhone/iPod, get to 320x480
-		glTranslatef(-160.0f, 240.0f, -312.0f); // magic numbers
-		glRotatef(0.0, 0.0, 0.0, 1.0);
-		glScalef(1.0f, -1.001f, 1.0f);
+		[self setupiPhone];
 	}
 #else
-	// Running on iPhone/iPod, get to 320x480
-	glTranslatef(-160.0f, 240.0f, -312.0f); // magic numbers
-	glRotatef(0.0, 0.0, 0.0, 1.0);
-	glScalef(1.0f, -1.001f, 1.0f);
+	[self setupiPhone];
 #endif
 
 	// translate with global camera offset, for scrolling
 	glTranslatef(cameraX, cameraY, 0.0f);
-	
-	// FIXME: if landscape is 1 / left
-	// glTranslatef(-320.0f, -10.0f, 0.0f);
-	// glRotate(90.0f, 0.0f, 0.0f, 1.0f);
-	
-	// FIXME: if landscape is 2 / right
-	// glTranslatef(0.0f, -480.0f, 0.0f);
-	// glRotate(270.0f, 0.0f, 0.0f, 1.0f);
 
-	// rotate with global xyz, for orientation
+	// rotate with global xyz
 	glRotatef(cameraRotate[0], cameraRotate[1], cameraRotate[2], cameraRotate[3]);		
 
 	glLineWidth(lineWidth);

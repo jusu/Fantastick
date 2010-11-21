@@ -41,6 +41,8 @@ kSquareX,   kSquareY
 @synthesize controller;
 @synthesize TouchView;
 
+static orientation currentOrientation = portrait;
+
 + (Class) layerClass
 {
 	return [CAEAGLLayer class];
@@ -71,7 +73,13 @@ kSquareX,   kSquareY
 
 		jsTimer = nil;
 	}
+	
     return self;
+}
+
++ (orientation) orientation
+{
+	return currentOrientation;
 }
 
 -(void)activate
@@ -532,14 +540,20 @@ char buffer[BUFFERMAXLEN+4];
 		}
 		[FantaStickViewController setTouchOffset: offset[0] Y: offset[1]];
 	} else
-	if(strncmp(cmd, "landscape 0", 11) == 0) {
-		// FIXME: set 'global' landscape flag to add extra camera translation to match models, and fix touch input
+	if(strncmp(cmd, "orientation 0", 13) == 0) {
+		currentOrientation = portrait;
 	} else
-	if(strncmp(cmd, "landscape 1", 11) == 0) {
-		// FIXME: set 'global' landscape flag to add extra camera translation to match models, and fix touch input
+	if(strncmp(cmd, "orientation 1", 13) == 0) {
+		currentOrientation = left;
 	} else
-	if(strncmp(cmd, "landscape 2", 11) == 0) {
-		// FIXME: set 'global' landscape flag to add extra camera translation to match models, and fix touch input
+	if(strncmp(cmd, "orientation 2", 13) == 0) {
+		currentOrientation = right;
+	} else
+	if(strncmp(cmd, "area 0", 6) == 0) {
+		[FantaStickViewController setAreaData: NO];
+	} else
+	if(strncmp(cmd, "area 1", 6) == 0) {
+		[FantaStickViewController setAreaData: YES];
 	}
 }
 

@@ -9,11 +9,13 @@
 #import "FantaStickViewController.h"
 #import "TouchView.h"
 #import "TouchImage.h"
+#import "GLView.h"
 
 @implementation FantaStickViewController
 
 int touchOffsetX = 0;
 int touchOffsetY = 0;
+BOOL isAreaDataEnabled = NO;
 
 @synthesize glview;
 
@@ -47,16 +49,29 @@ void rot13(char *str)
 	for(int n=0; n<kFingersMax; n++)
 		fingers[n] = 0;
 
-	// Initialize transport in background thread - looking up hostname might take a while.
-	// Also keep reading socket in another threads runloop.
-	[NSThread detachNewThreadSelector: @selector(initTransport) toTarget: self withObject: nil];
-	//[self performSelector: @selector(initTransport)];
+	// XXX check if art.local actually exists first.
+	
+	// Check for hostname, quit if not yet set
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	NSString *sHostname = [defaults stringForKey: @"hostname"];
+	if(sHostname == NULL || [sHostname isEqual: @"art.local"]) { // hostname not set?
+		[self hostnameNotSet];
+	} else {
+		// Initialize transport in background thread - looking up hostname might take a while.
+		// Also keep reading socket in another threads runloop.
+		[NSThread detachNewThreadSelector: @selector(initTransport) toTarget: self withObject: nil];
+		//[self performSelector: @selector(initTransport)];
+	}
 
 	// Get notification of volumechange.
 	volumeEventView = [[[MPVolumeView alloc] initWithFrame:self.view.bounds] autorelease];
 	[[NSNotificationCenter defaultCenter] addObserver:self
      selector:@selector(volumeChanged:) name:@"AVSystemController_SystemVolumeDidChangeNotification" object:nil];
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 30200
+	idiom = UI_USER_INTERFACE_IDIOM();
+#endif
+	
 	char *appleLoveStr = "cnguZnwbeEnqvhf";
 	char str[strlen(appleLoveStr)+1];
 	strcpy(str, appleLoveStr);
@@ -77,8 +92,8 @@ void rot13(char *str)
 
 - (void)hostnameNotSet
 {
-	[[[self view] startupLabel] setText: @"Please set hostname in Settings."];
-	[[[self view] animationIndicator] setHidden: YES];
+	[[((TouchView*)[self view]) startupLabel] setText: @"Please set hostname in Settings."];
+	[[((TouchView*)[self view]) animationIndicator] setHidden: YES];
 }
 
 - (void)hostNotFound
@@ -114,7 +129,7 @@ void rot13(char *str)
 
 - (void)hideStartupAnimation
 {
-	[[[self view] resolvingView] setHidden: YES];
+	[[((TouchView*)[self view]) resolvingView] setHidden: YES];
 }
 
 - (void)transportDone
@@ -145,6 +160,8 @@ void rot13(char *str)
 
 - (void)sendTouches:(NSSet*)touches mode: (int) m
 {
+	orientation orient = [GLView orientation];
+
 	int a, b;
 	BOOL allEnded = YES;
 	for(UITouch *touch in touches) {
@@ -173,11 +190,27 @@ void rot13(char *str)
 
 		CGPoint loc = [touch locationInView: (UIView*)[self view]];
 
-		[[self view] touchPoint: loc mode: m];
+		if (orient == left) {
+			float swap = loc.y;
+			loc.y = [self view].bounds.size.width - loc.x;
+			loc.x = swap;
+		} else if (orient == right) {
+			float swap = loc.x;
+			loc.x = [self view].bounds.size.width - loc.y;
+			loc.y = swap;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 30200
+			if (idiom == UIUserInterfaceIdiomPad) {
+				loc.x += 260.0f;
+			} else {
+				loc.x += 160.0f;
+			}
+#else
+			loc.x += 160.0f;
+#endif
+		}
 
-//		if(ti) {
-//			[transport send: [NSString stringWithFormat: @"I %ld %ld %@", lrintf(loc.x), lrintf(loc.y), ti.name]];
-//		}
+		[((TouchView*)[self view]) touchPoint: loc mode: m];
+
 		char prefix = 'M';
 		if(touch.phase == UITouchPhaseEnded || touch.phase == UITouchPhaseCancelled) {
 			prefix = 'E';
@@ -197,15 +230,25 @@ void rot13(char *str)
 		id fv = [touch valueForKey: appleLove1];
 		CGFloat radius = fv ? [fv floatValue] : 0.0f;
 
-		NSString *str = [[NSString alloc] initWithFormat: @"%c %ld %ld %ld %f", prefix,
+		NSString *str;
+		
+		if (isAreaDataEnabled) {
+			str	= [[NSString alloc] initWithFormat: @"%c %ld %ld %ld %f", prefix,
 						 a = touchOffsetX + lrintf(loc.x),
 						 b = touchOffsetY + lrintf(loc.y),
 						 nID + 1,
 						 radius];
+		} else {
+			str	= [[NSString alloc] initWithFormat: @"%c %ld %ld %ld", prefix,
+				   a = touchOffsetX + lrintf(loc.x),
+				   b = touchOffsetY + lrintf(loc.y),
+				   nID + 1];
+		}
+
 		[transport send: str];
 		[str release];
 		
-		if([glview jsActive]) {
+		if([(GLView*)glview jsActive]) {
 			[glview touch: prefix x: a y: b num: nID + 1 radius: radius];
 		}
 	}
@@ -225,6 +268,11 @@ void rot13(char *str)
 {
 	touchOffsetX = x;
 	touchOffsetY = y;
+}
+
++ (void) setAreaData: (BOOL) b
+{
+	isAreaDataEnabled = b;
 }
 
 - (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event

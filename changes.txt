@@ -3,9 +3,7 @@
 - added pathradius to fingerdata
 - default hostname to "art.local"
 - added 'clear modelname' command
-- added 'landscape 0/1/2' command
-	FIXME: unfinished - has global rotate but inconvenient - screen vs. touch is off,
-	and touch data needs to be rotated as well.
+- added 'orientation 0/1/2' command
 
 
 2.2: new network code
