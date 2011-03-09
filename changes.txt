@@ -1,6 +1,6 @@
 2.4:
-
-
+- fixed international characters
+- percent encoding allowed in javascript commands
 
 2.3:
 
