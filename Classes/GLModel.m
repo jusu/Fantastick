@@ -261,7 +261,7 @@ static float cameraRotate[4];
 			color[3] = 0.999999f;
 
 		[textString release];
-		textString = [[NSString alloc] initWithCString: a length: strlen(a)];
+		textString = [[NSString alloc] initWithCString: a encoding: NSUTF8StringEncoding];
 
 		[self updateTextString];
 	} else

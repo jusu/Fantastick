@@ -215,8 +215,9 @@ static orientation currentOrientation = portrait;
 	}
 
 	NSString *s = [web stringByEvaluatingJavaScriptFromString: @"_cmdq_poll();"];
-	if(s.length > 0) {
-		char *next, *js = (char*)[s cStringUsingEncoding: NSUTF8StringEncoding];
+	NSString *s2 = [s stringByReplacingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
+	if(s2.length > 0) {
+		char *next, *js = (char*)[s2 cStringUsingEncoding: NSUTF8StringEncoding];
 		while(js) {
 			next = strstr(js, "\xc2\xb0"); // °
 			if(next) {

@@ -135,7 +135,7 @@ void rot13(char *str)
 - (void)transportDone
 {
 	[self hideStartupAnimation];
-	[transport send:@"FantaStick init 2.3"];
+	[transport send:@"FantaStick init 2.4"];
 	// Send our IP over every second until we receive something.
 	NSString *sIP = @"IP ";
 	NSString *sMsg = [sIP stringByAppendingString: transport.myip];
