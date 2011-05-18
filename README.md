@@ -10,4 +10,4 @@ http://fantastick.tenderapp.com
 
 # The MIT License
 
-Unless otherwise stated Fantastick is Copyright (C) 2011 Pink Twins, see LICENSE for info.
+Fantastick is Copyright (C) 2011 Pink Twins, see LICENSE for info.
