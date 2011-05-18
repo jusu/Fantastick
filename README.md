@@ -1,4 +1,4 @@
-Fantastick is your custom remote for Max/MSP or Pure Data.
+Fantastick is your custom iOS remote for Max/MSP or Pure Data.
 
 # website
 
