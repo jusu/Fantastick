@@ -25,6 +25,7 @@ GLfloat squareTextures[] = {
 @interface GLModel (private)
 
 - (void) updateTextString;
+- (void) sendTexture;
 
 @end
 
@@ -193,21 +194,18 @@ static float cameraRotate[4];
 		// width, height, must be power of twos! resize if they are not?
 
 		if(imageCGImage) {
-			imageData = (GLubyte *)malloc(imagewidth * imageheight * 4);
-			imageContext = CGBitmapContextCreate(imageData, imagewidth, imageheight, 8, imagewidth * 4,
+			@synchronized(self) {
+				imageData = (GLubyte *)malloc(imagewidth * imageheight * 4);
+				imageContext = CGBitmapContextCreate(imageData, imagewidth, imageheight, 8, imagewidth * 4,
 												 CGImageGetColorSpace(imageCGImage), kCGImageAlphaPremultipliedLast);
-			CGContextDrawImage(imageContext, CGRectMake(0.0, 0.0, (CGFloat)imagewidth, (CGFloat)imageheight), imageCGImage);
-			CGContextRelease(imageContext);
-			imageContext = NULL;
-			
-			glDeleteTextures(1, &imageTexture);
-			glGenTextures(1, &imageTexture);
-			glBindTexture(GL_TEXTURE_2D, imageTexture);
-			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, imagewidth, imageheight, 0, GL_RGBA, GL_UNSIGNED_BYTE, imageData);		
-			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-			free(imageData);
-			imageData = NULL;
-			
+				CGContextDrawImage(imageContext, CGRectMake(0.0, 0.0, (CGFloat)imagewidth, (CGFloat)imageheight), imageCGImage);
+				CGContextRelease(imageContext);
+				imageContext = NULL;
+			}
+				
+			// imageData contains the imagedata. sendTexture() is called on next draw.
+
+			free(vertexArray);
 			vertexArray = (float*)malloc(8 * sizeof(float));
 			long halfwidth = imagewidth / 2, halfheight = imageheight / 2;
 			vertexArray[0] = -halfwidth;
@@ -347,6 +345,21 @@ static float cameraRotate[4];
 	glScalef(1.0f, -1.001f, 1.0f);
 }
 
+- (void) sendTexture
+{
+	if (imageData) {
+		@synchronized(self) {
+			glDeleteTextures(1, &imageTexture);
+			glGenTextures(1, &imageTexture);
+			glBindTexture(GL_TEXTURE_2D, imageTexture);
+			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, imagewidth, imageheight, 0, GL_RGBA, GL_UNSIGNED_BYTE, imageData);		
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+			free(imageData);
+			imageData = NULL;
+		}
+	}
+}
+
 - (void)draw
 {
 	if(!text2d && (!vertexCount || !vertexArray))
@@ -377,8 +390,12 @@ static float cameraRotate[4];
 	glTranslatef(position[0], position[1], position[2]);
 	glRotatef(rotate[0], rotate[1], rotate[2], rotate[3]);
 	glScalef(scale[0], scale[1], scale[2]);
-
+	
 	if(isTextured) {
+		if (imageData) {
+			[self sendTexture];
+		}
+
 		glEnable(GL_TEXTURE_2D);
 		glDisableClientState(GL_NORMAL_ARRAY);
 		glEnableClientState(GL_TEXTURE_COORD_ARRAY);

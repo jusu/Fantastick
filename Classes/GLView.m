@@ -206,9 +206,11 @@ static orientation currentOrientation = portrait;
 		for(NSString *js in jsCode) {
 			if(js) {
 				NSString *res = [web stringByEvaluatingJavaScriptFromString: js];
+/*
 				if(res.length) {
 					NSLog(@"js '%@'", res);
 				}
+*/
 			}
 		}
 		[jsCode removeAllObjects];
@@ -318,7 +320,7 @@ static orientation currentOrientation = portrait;
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glEnableClientState(GL_VERTEX_ARRAY);
-	
+
 	@synchronized(models) {
 		NSArray *glmodels = [models allValues];
 		if(!clearRequested) {
