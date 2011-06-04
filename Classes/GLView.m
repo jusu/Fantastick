@@ -205,12 +205,7 @@ static orientation currentOrientation = portrait;
 	@synchronized(jsCode) {
 		for(NSString *js in jsCode) {
 			if(js) {
-				NSString *res = [web stringByEvaluatingJavaScriptFromString: js];
-/*
-				if(res.length) {
-					NSLog(@"js '%@'", res);
-				}
-*/
+				[web stringByEvaluatingJavaScriptFromString: js];
 			}
 		}
 		[jsCode removeAllObjects];

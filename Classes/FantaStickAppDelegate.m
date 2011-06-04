@@ -16,7 +16,6 @@
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
 
-    // Override point for customization after app launch
 	application.idleTimerDisabled = YES;
 
     [window addSubview:viewController.view];
