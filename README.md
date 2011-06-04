@@ -1,4 +1,4 @@
-Fantastick is your custom remote for Max/MSP or Pure Data.
+Fantastick is your custom iOS remote for Max/MSP or Pure Data.
 
 # website
 
@@ -10,4 +10,4 @@ http://fantastick.tenderapp.com
 
 # The MIT License
 
-Unless otherwise stated Fantastick is Copyright (C) 2011 Pink Twins, see LICENSE for info.
+Fantastick is Copyright (C) 2011 Pink Twins, see LICENSE for info.
