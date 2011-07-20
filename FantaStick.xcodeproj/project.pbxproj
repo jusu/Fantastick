@@ -15,6 +15,7 @@
 		2899E5220DE3E06400AC0155 /* FantaStickViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* FantaStickViewController.xib */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* FantaStickViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* FantaStickViewController.m */; };
+		C918C76113D7705D006B4BBF /* TextCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C918C76013D7705D006B4BBF /* TextCache.m */; };
 		C92ACE3D0F4DD67A00CDC3B8 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C92ACE3C0F4DD67A00CDC3B8 /* OpenGLES.framework */; };
 		C92ACE490F4DD69600CDC3B8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C92ACE480F4DD69600CDC3B8 /* QuartzCore.framework */; };
 		C92ACEEF0F4DEB4300CDC3B8 /* GLView.m in Sources */ = {isa = PBXBuildFile; fileRef = C92ACEEE0F4DEB4300CDC3B8 /* GLView.m */; };
@@ -51,6 +52,8 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* FantaStick_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FantaStick_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C918C75F13D7705D006B4BBF /* TextCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextCache.h; sourceTree = "<group>"; };
+		C918C76013D7705D006B4BBF /* TextCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextCache.m; sourceTree = "<group>"; };
 		C92ACE3C0F4DD67A00CDC3B8 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		C92ACE480F4DD69600CDC3B8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C92ACEED0F4DEB4300CDC3B8 /* GLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLView.h; sourceTree = "<group>"; };
@@ -124,6 +127,8 @@
 				C99D7D7E0F7B667D008B6A4B /* Texture2D.m */,
 				C9B2CB750F70E0590071ABBD /* FSCache.h */,
 				C9B2CB760F70E0590071ABBD /* FSCache.m */,
+				C918C75F13D7705D006B4BBF /* TextCache.h */,
+				C918C76013D7705D006B4BBF /* TextCache.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 				C9B2CB770F70E0590071ABBD /* FSCache.m in Sources */,
 				C99D7D7F0F7B667D008B6A4B /* Texture2D.m in Sources */,
 				C92E6DFF125CFF88008D4FF1 /* UDPEcho.m in Sources */,
+				C918C76113D7705D006B4BBF /* TextCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

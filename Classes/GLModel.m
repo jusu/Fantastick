@@ -10,6 +10,7 @@
 #import "GLModel.h"
 #import "FSCache.h"
 #import "GLView.h"
+#import "TextCache.h"
 
 GLfloat squareTextures[] = {
 	-0.0f, 0.0f,
@@ -79,6 +80,7 @@ static float cameraRotate[4];
 	textString = NULL;
 	fontName =[[NSString alloc] initWithString: @"Helvetica"];
 	fontSize = 11;
+	needsUpdateTextString = NO;
 
 	[self updateWithBytes: a];
 
@@ -261,7 +263,7 @@ static float cameraRotate[4];
 		[textString release];
 		textString = [[NSString alloc] initWithCString: a encoding: NSUTF8StringEncoding];
 
-		[self updateTextString];
+		needsUpdateTextString = YES;
 	} else
 	if(strncmp(a, "font ", 5)==0) {
 		a += 5;
@@ -270,7 +272,7 @@ static float cameraRotate[4];
 		[fontName release];
 		fontName = [[NSString alloc] initWithCString: a length: strlen(a)];
 
-		[self updateTextString];
+		needsUpdateTextString = YES;
 	} else
 	if(strncmp(a, "fontsize ", 9)==0) {
 		a += 9;
@@ -280,30 +282,39 @@ static float cameraRotate[4];
 		if(fontSize <= 1)
 			fontSize = 2;
 
-		[self updateTextString];
+		needsUpdateTextString = YES;
 	}
 }
 
 - (void) updateTextString
 {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-	
+
 	if(text2d) {
 		[text2d deleteTexture];
 		[text2d release];
 	}
-	
-	if([textString length] * fontSize >= 1000) {
-		fontSize = 1000 / [textString length];
+
+	CGSize dim;
+	id font = [UIFont fontWithName: fontName size: fontSize];
+	if (!font) {
+		if([textString length] * fontSize >= 1000) {
+			fontSize = 1000 / [textString length];
+		}
+		dim = CGSizeMake([textString length] * fontSize, fontSize*1.2);
+	} else {
+		dim = [textString sizeWithFont: font];
 	}
 
 	text2d = [[Texture2D alloc] initWithString: textString
-									dimensions: CGSizeMake([textString length] * fontSize, fontSize*1.2)
+									dimensions: dim
 									 alignment: UITextAlignmentLeft
 									  fontName: fontName
 									  fontSize: fontSize];
-	
+
 	[pool release];
+
+	needsUpdateTextString = NO;
 }
 
 - (BOOL) isOpaque
@@ -362,7 +373,7 @@ static float cameraRotate[4];
 
 - (void)draw
 {
-	if(!text2d && (!vertexCount || !vertexArray))
+	if(!text2d && !needsUpdateTextString && (!vertexCount || !vertexArray))
 		return;
 
 	glLoadIdentity();
@@ -410,7 +421,11 @@ static float cameraRotate[4];
 		return;
 	}
 
-	if(text2d) {
+	if(text2d || needsUpdateTextString) {
+		if (needsUpdateTextString) {
+			[self updateTextString];
+		}
+
 		glEnable(GL_TEXTURE_2D);
 		glDisableClientState(GL_NORMAL_ARRAY);
 		glEnableClientState(GL_TEXTURE_COORD_ARRAY);

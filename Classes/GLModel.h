@@ -37,6 +37,7 @@
 	NSString		*textString;
 	NSString		*fontName;
 	int				fontSize;
+	BOOL			needsUpdateTextString;
 
 	GLenum rendermode;
 

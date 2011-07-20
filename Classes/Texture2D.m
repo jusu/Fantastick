@@ -50,8 +50,9 @@ return self;
 
 - (void) deleteTexture
 {
-	if(_name)
+	if(_name) {
 		glDeleteTextures(1, &_name);
+	}
 }
 
 - (void) dealloc
