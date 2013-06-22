@@ -14,12 +14,19 @@
 @synthesize window;
 @synthesize viewController;
 
-- (void)applicationDidFinishLaunching:(UIApplication *)application {    
 
-	application.idleTimerDisabled = YES;
-
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Register the preference defaults early.   
+    NSDictionary *appDefaults = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"art.local", @"6661", @"6662", nil] forKeys:[NSArray arrayWithObjects:@"hostname", @"outport", @"inport", nil]];
+    
+    [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
+    
+    // Other initialization...
+    application.idleTimerDisabled = YES;
+    
     [window addSubview:viewController.view];
     [window makeKeyAndVisible];
+    return YES;
 }
 
 
