@@ -13,7 +13,7 @@
 	<key>CFBundleIconFile~ipad</key>
 	<string>icon-72.png</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.pinktwins.FantaStick</string>
+	<string>com.pinktwins.Fantastick2</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -23,9 +23,9 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>2.7</string>
+	<string>1</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.7</string>
+	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSMainNibFile</key>
@@ -35,7 +35,7 @@
 	<key>UIStatusBarHidden</key>
 	<true/>
 	<key>UIInterfaceOrientation</key>
-	<string></string>
+	<string>UIInterfaceOrientationPortrait</string>
 	<key>UIRequiresPersistentWiFi</key>
 	<true/>
 	<key>UIPrerenderedIcon</key>

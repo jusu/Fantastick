@@ -288,16 +288,26 @@ static orientation currentOrientation = portrait;
 {
 	const GLfloat zNear = 0.1, 
 	zFar = 1000.0, 
-	fieldOfView = 54.5; 
-	GLfloat size; 
+	fieldOfView = 54.5;
+	GLfloat size;
 	
 	glMatrixMode(GL_PROJECTION); 
-	glEnable(GL_DEPTH_TEST); 
+	glEnable(GL_DEPTH_TEST);
 	size = zNear * tanf(DEGREES_TO_RADIANS(fieldOfView) / 2.0); 
 	CGRect rect = self.bounds; 
-	glFrustumf(-size, size, -size / (rect.size.width / rect.size.height), size / 
-			   (rect.size.width / rect.size.height), zNear, zFar); 
-	glViewport(0, 0, rect.size.width, rect.size.height);
+
+    // Adjust rendering to various device sizes
+    switch((int)rect.size.height) {
+        // iPhone 5 tall screen
+        case 568:
+            rect.size.height += (rect.size.height - 480.0f);
+            break;
+    }
+    
+    glFrustumf(-size, size, -size / (rect.size.width / rect.size.height), size /
+               (rect.size.width / rect.size.height), zNear, zFar);
+
+    glViewport(0, 0, rect.size.width, rect.size.height);
 
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);

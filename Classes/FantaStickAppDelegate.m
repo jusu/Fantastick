@@ -23,12 +23,12 @@
     
     // Other initialization...
     application.idleTimerDisabled = YES;
+    application.statusBarHidden = YES;
     
     [window addSubview:viewController.view];
     [window makeKeyAndVisible];
     return YES;
 }
-
 
 - (void)dealloc {
     [viewController release];

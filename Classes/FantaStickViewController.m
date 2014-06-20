@@ -233,13 +233,13 @@ void rot13(char *str)
 		NSString *str;
 		
 		if (isAreaDataEnabled) {
-			str	= [[NSString alloc] initWithFormat: @"%c %ld %ld %ld %f", prefix,
+			str	= [[NSString alloc] initWithFormat: @"%c %d %d %d %f", prefix,
 						 a = touchOffsetX + lrintf(loc.x),
 						 b = touchOffsetY + lrintf(loc.y),
 						 nID + 1,
 						 radius];
 		} else {
-			str	= [[NSString alloc] initWithFormat: @"%c %ld %ld %ld", prefix,
+			str	= [[NSString alloc] initWithFormat: @"%c %d %d %d", prefix,
 				   a = touchOffsetX + lrintf(loc.x),
 				   b = touchOffsetY + lrintf(loc.y),
 				   nID + 1];
