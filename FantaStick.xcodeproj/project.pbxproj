@@ -25,16 +25,17 @@
 		C941CC140F1359B400738DAF /* Transport.m in Sources */ = {isa = PBXBuildFile; fileRef = C941CC130F1359B400738DAF /* Transport.m */; };
 		C941CC620F13633E00738DAF /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C941CC610F13633E00738DAF /* CoreFoundation.framework */; };
 		C941CD630F13B0C100738DAF /* TouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = C941CD620F13B0C100738DAF /* TouchView.m */; };
-		C941D1290F155F1600738DAF /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C941D1270F155F1600738DAF /* icon.png */; };
 		C958D0650F18F103008E521A /* TouchImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C958D0640F18F103008E521A /* TouchImage.m */; };
 		C958D1510F191F4F008E521A /* nodata.png in Resources */ = {isa = PBXBuildFile; fileRef = C958D1500F191F4F008E521A /* nodata.png */; };
+		C959B2D11955CCB800AB3448 /* icon-72~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = C959B2CE1955CCB800AB3448 /* icon-72~ipad.png */; };
+		C959B2D21955CCB800AB3448 /* icon~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = C959B2CF1955CCB800AB3448 /* icon~iphone.png */; };
+		C959B2D31955CCB800AB3448 /* icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C959B2D01955CCB800AB3448 /* icon-72@2x.png */; };
 		C96EAA04195424FE00DB4388 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C96EAA03195424FE00DB4388 /* Default-568h@2x.png */; };
 		C97CECFC0F6E6C630074AF06 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97CECFB0F6E6C630074AF06 /* MediaPlayer.framework */; };
 		C980564A11BAC5BF00B58528 /* MainWindow-ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9D6E4C41110EA4C00B9D40F /* MainWindow-ipad.xib */; };
 		C980564B11BAC5C400B58528 /* FantaStickViewController-ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9D6E4C51110EA4C00B9D40F /* FantaStickViewController-ipad.xib */; };
 		C99D7D7F0F7B667D008B6A4B /* Texture2D.m in Sources */ = {isa = PBXBuildFile; fileRef = C99D7D7E0F7B667D008B6A4B /* Texture2D.m */; };
 		C9B2CB770F70E0590071ABBD /* FSCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B2CB760F70E0590071ABBD /* FSCache.m */; };
-		C9EFDEC811BEAA8F0084EB99 /* icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = C9EFDEC711BEAA8F0084EB99 /* icon-72.png */; };
 		C9EFDEE211BEAC830084EB99 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9EFDEE111BEAC830084EB99 /* Entitlements.plist */; };
 		C9FEE1170F162D150055F151 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C9FEE1160F162D150055F151 /* Settings.bundle */; };
 /* End PBXBuildFile section */
@@ -69,11 +70,13 @@
 		C941CC610F13633E00738DAF /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
 		C941CD610F13B0C100738DAF /* TouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchView.h; sourceTree = "<group>"; };
 		C941CD620F13B0C100738DAF /* TouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchView.m; sourceTree = "<group>"; };
-		C941D1270F155F1600738DAF /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		C94779370F3DE53A001B9FEB /* changes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = changes.txt; sourceTree = "<group>"; };
 		C958D0630F18F103008E521A /* TouchImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchImage.h; sourceTree = "<group>"; };
 		C958D0640F18F103008E521A /* TouchImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchImage.m; sourceTree = "<group>"; };
 		C958D1500F191F4F008E521A /* nodata.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nodata.png; sourceTree = "<group>"; };
+		C959B2CE1955CCB800AB3448 /* icon-72~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-72~ipad.png"; sourceTree = "<group>"; };
+		C959B2CF1955CCB800AB3448 /* icon~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon~iphone.png"; sourceTree = "<group>"; };
+		C959B2D01955CCB800AB3448 /* icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-72@2x.png"; sourceTree = "<group>"; };
 		C96EAA03195424FE00DB4388 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C97CECFB0F6E6C630074AF06 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		C99D7D7D0F7B667D008B6A4B /* Texture2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture2D.h; sourceTree = "<group>"; };
@@ -82,7 +85,6 @@
 		C9B2CB760F70E0590071ABBD /* FSCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCache.m; sourceTree = "<group>"; };
 		C9D6E4C41110EA4C00B9D40F /* MainWindow-ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-ipad.xib"; path = "Resources-iPad/MainWindow-ipad.xib"; sourceTree = "<group>"; };
 		C9D6E4C51110EA4C00B9D40F /* FantaStickViewController-ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "FantaStickViewController-ipad.xib"; path = "Resources-iPad/FantaStickViewController-ipad.xib"; sourceTree = "<group>"; };
-		C9EFDEC711BEAA8F0084EB99 /* icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-72.png"; sourceTree = "<group>"; };
 		C9EFDEE111BEAC830084EB99 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		C9FEE1160F162D150055F151 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -171,13 +173,14 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C959B2CE1955CCB800AB3448 /* icon-72~ipad.png */,
+				C959B2CF1955CCB800AB3448 /* icon~iphone.png */,
+				C959B2D01955CCB800AB3448 /* icon-72@2x.png */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				2899E5210DE3E06400AC0155 /* FantaStickViewController.xib */,
 				C9D6E4C41110EA4C00B9D40F /* MainWindow-ipad.xib */,
 				C9D6E4C51110EA4C00B9D40F /* FantaStickViewController-ipad.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
-				C941D1270F155F1600738DAF /* icon.png */,
-				C9EFDEC711BEAA8F0084EB99 /* icon-72.png */,
 				C958D1500F191F4F008E521A /* nodata.png */,
 				C9EFDEE111BEAC830084EB99 /* Entitlements.plist */,
 			);
@@ -256,14 +259,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				C959B2D21955CCB800AB3448 /* icon~iphone.png in Resources */,
 				C980564A11BAC5BF00B58528 /* MainWindow-ipad.xib in Resources */,
 				2899E5220DE3E06400AC0155 /* FantaStickViewController.xib in Resources */,
 				C96EAA04195424FE00DB4388 /* Default-568h@2x.png in Resources */,
 				C980564B11BAC5C400B58528 /* FantaStickViewController-ipad.xib in Resources */,
-				C941D1290F155F1600738DAF /* icon.png in Resources */,
 				C9FEE1170F162D150055F151 /* Settings.bundle in Resources */,
+				C959B2D31955CCB800AB3448 /* icon-72@2x.png in Resources */,
+				C959B2D11955CCB800AB3448 /* icon-72~ipad.png in Resources */,
 				C958D1510F191F4F008E521A /* nodata.png in Resources */,
-				C9EFDEC811BEAA8F0084EB99 /* icon-72.png in Resources */,
 				C9EFDEE211BEAC830084EB99 /* Entitlements.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,7 +311,7 @@
 				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_NAME = "Fantastick (Lukas)";
+				PRODUCT_NAME = "Fantastick Gold";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
@@ -331,7 +335,7 @@
 				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 2.2;
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_NAME = "Fantastick (Lukas)";
+				PRODUCT_NAME = "Fantastick Gold";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -350,8 +354,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "Fantastick Pro";
-				PROVISIONING_PROFILE = "8BC6CFBC-3448-425B-AA6C-CBBC1B6680A7";
+				PRODUCT_NAME = "Fantastick Gold";
+				PROVISIONING_PROFILE = "728DFB71-E311-46F2-A916-9E12D2B4E47B";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv6";
@@ -370,8 +374,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "Fantastick Pro";
-				PROVISIONING_PROFILE = "8BC6CFBC-3448-425B-AA6C-CBBC1B6680A7";
+				PRODUCT_NAME = "Fantastick Gold";
+				PROVISIONING_PROFILE = "728DFB71-E311-46F2-A916-9E12D2B4E47B";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv6";
@@ -390,8 +394,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "Fantastick Pro";
-				PROVISIONING_PROFILE = "8BC6CFBC-3448-425B-AA6C-CBBC1B6680A7";
+				PRODUCT_NAME = "Fantastick Gold";
+				PROVISIONING_PROFILE = "728DFB71-E311-46F2-A916-9E12D2B4E47B";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -414,8 +418,8 @@
 				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_NAME = "Fantastick (Lukas)";
-				PROVISIONING_PROFILE = "";
+				PRODUCT_NAME = "Fantastick Gold";
+				PROVISIONING_PROFILE = "728DFB71-E311-46F2-A916-9E12D2B4E47B";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv6";
@@ -434,8 +438,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "Fantastick Pro";
-				PROVISIONING_PROFILE = "8BC6CFBC-3448-425B-AA6C-CBBC1B6680A7";
+				PRODUCT_NAME = "Fantastick Gold";
+				PROVISIONING_PROFILE = "728DFB71-E311-46F2-A916-9E12D2B4E47B";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -457,8 +461,8 @@
 				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_NAME = "Fantastick (Lukas)";
-				PROVISIONING_PROFILE = "8BC6CFBC-3448-425B-AA6C-CBBC1B6680A7";
+				PRODUCT_NAME = "Fantastick Gold";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv6";
